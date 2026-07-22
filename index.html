@@ -111,7 +111,6 @@
                 <a href="#eserler" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Eserler</a>
                 <a href="#yazar" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Yazar Hakkında</a>
                 <a href="#dusunce-defteri" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Düşünce Defteri</a>
-                <a href="#ai-companion" class="text-brand-gold hover:text-white transition-colors uppercase flex items-center gap-1 border border-brand-gold/40 px-3 py-1 rounded-sm"><i class="fas fa-brain text-xs"></i> AI Asistan</a>
                 <a href="#iletisim" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">İletişim</a>
             </div>
 
@@ -126,7 +125,6 @@
              <a href="#eserler" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2" onclick="toggleMobileMenu()">Eserler</a>
              <a href="#yazar" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2" onclick="toggleMobileMenu()">Yazar Hakkında</a>
              <a href="#dusunce-defteri" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2" onclick="toggleMobileMenu()">Düşünce Defteri</a>
-             <a href="#ai-companion" class="text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2 flex items-center gap-2" onclick="toggleMobileMenu()"><i class="fas fa-brain"></i> AI Asistan</a>
              <a href="#iletisim" class="text-white hover:text-brand-gold font-sans uppercase text-sm" onclick="toggleMobileMenu()">İletişim</a>
         </div>
     </nav>
@@ -156,9 +154,6 @@
             <div class="flex flex-wrap gap-4 justify-center">
                 <a href="#eserler" class="inline-block border border-brand-gold text-brand-gold px-10 py-4 rounded-sm font-sans tracking-widest text-sm uppercase hover:bg-brand-gold hover:text-brand-dark transition-all duration-300 opacity-0 animate-[fadeIn_2s_ease-out_2.5s_forwards]">
                     Kurgu Evrenini Keşfet
-                </a>
-                <a href="#ai-companion" class="inline-block bg-brand-gold/10 border border-brand-gold/50 text-brand-gold px-8 py-4 rounded-sm font-sans tracking-widest text-sm uppercase hover:bg-brand-gold hover:text-brand-dark transition-all duration-300 opacity-0 animate-[fadeIn_2s_ease-out_2.7s_forwards]">
-                    <i class="fas fa-brain mr-2"></i> Yapay Zeka ile Felsefi Sohbet
                 </a>
             </div>
         </div>
@@ -238,53 +233,6 @@
         </div>
     </section>
 
-    <!-- GEMINI API INTEGRATION: AI Companion / Felsefi Sohbet Bölümü -->
-    <section id="ai-companion" class="py-24 bg-[#070A12] relative border-t border-b border-brand-gold/20">
-        <div class="max-w-4xl mx-auto px-6 md:px-12">
-            <div class="text-center mb-12 reveal">
-                <span class="font-sans text-brand-gold text-xs tracking-[0.3em] uppercase mb-2 block">İnteraktif Edebi Deneyim</span>
-                <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Entropi & Felsefe Asistanı</h2>
-                <div class="w-16 h-px bg-brand-gold mx-auto mb-4"></div>
-                <p class="font-serif text-brand-gray text-base max-w-xl mx-auto">
-                    Tolga Özdoğan’ın "Kaosun Mimarı İnsan" eserindeki felsefi arka plandan, kuantum düşüncesinden ve entropiden ilham alan yapay zeka asistanına aklınızdaki soruları sorun.
-                </p>
-            </div>
-
-            <div class="bg-[#111827] border border-brand-gold/30 rounded-lg p-6 md:p-8 shadow-2xl reveal">
-                <!-- Chat Window -->
-                <div id="ai-chat-history" class="space-y-4 mb-6 max-h-[400px] overflow-y-auto pr-2">
-                    <div class="flex items-start gap-3">
-                        <div class="w-8 h-8 rounded-full bg-brand-gold text-brand-dark flex items-center justify-center font-bold shrink-0">TÖ</div>
-                        <div class="bg-[#1F2937] text-gray-200 p-4 rounded-lg rounded-tl-none font-serif text-sm leading-relaxed border border-brand-gold/10">
-                            Merhabalar. "Kaosun Mimarı İnsan" evrenine hoş geldiniz. Entropi, ahlakın tasarımı veya düzen arayışı üzerine neyi merak ediyorsunuz? Soru sormak ya da aşağıdaki hazır konulardan birini seçmek suretiyle zihinsel yolculuğumuza başlayabiliriz.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quick Prompt Suggestions -->
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <button onclick="askPrompt('Entropi insan ilişkilerini nasıl etkiler?')" class="text-xs bg-brand-dark border border-brand-gold/30 text-brand-gold px-3 py-1.5 rounded hover:bg-brand-gold hover:text-brand-dark transition-colors">
-                        "Entropi ve İlişkiler"
-                    </button>
-                    <button onclick="askPrompt('Kaos ile düzen arasındaki denge nedir?')" class="text-xs bg-brand-dark border border-brand-gold/30 text-brand-gold px-3 py-1.5 rounded hover:bg-brand-gold hover:text-brand-dark transition-colors">
-                        "Kaos ve Düenge Denge"
-                    </button>
-                    <button onclick="askPrompt('Kurgunun arka planındaki felsefi temel nedir?')" class="text-xs bg-brand-dark border border-brand-gold/30 text-brand-gold px-3 py-1.5 rounded hover:bg-brand-gold hover:text-brand-dark transition-colors">
-                        "Felsefi Altyapı"
-                    </button>
-                </div>
-
-                <!-- Input Area -->
-                <div class="flex gap-3">
-                    <input type="text" id="ai-user-input" placeholder="Felsefi bir soru sorun..." class="flex-1 bg-brand-dark border border-brand-gray/30 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-gold font-serif" onkeypress="if(event.key === 'Enter') sendToGemini()">
-                    <button onclick="sendToGemini()" id="ai-send-btn" class="bg-brand-gold text-brand-dark font-sans font-semibold px-6 py-3 rounded text-sm tracking-wider uppercase hover:bg-white transition-colors flex items-center gap-2">
-                        <span>Gönder</span> <i class="fas fa-paper-plane"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Yazar Hakkında Section -->
     <section id="yazar" class="py-24 bg-[#080B12] relative border-t border-brand-gold/10">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
@@ -296,12 +244,12 @@
                         <!-- Main Author Image -->
                         <div class="relative">
                             <div class="absolute -inset-2 border border-brand-gold/30 rounded-sm transform translate-x-2 translate-y-2"></div>
-                            <img src="Tolga1.png" alt="Tolga Özdoğan - Yazar" class="w-full h-auto rounded-sm shadow-2xl relative z-10">
+                            <img src="Tolga1.png" alt="Tolga Özdoğan - Yazar" class="w-full h-auto rounded-sm shadow-2xl relative z-10 object-cover">
                         </div>
                         <!-- Bottom Images Row -->
                         <div class="grid grid-cols-2 gap-4">
-                             <img src="5.png" alt="Tolga Özdoğan Çalışırken" class="w-full h-auto rounded-sm shadow-lg self-start">
-                             <img src="WhatsApp Image 2026-07-21 at 11.33.35.jpeg" alt="Limera Raflarında" class="w-full h-auto rounded-sm shadow-lg self-start">
+                             <img src="5.png" alt="Tolga Özdoğan Çalışırken" class="w-full h-auto rounded-sm shadow-lg self-start object-cover">
+                             <img src="WhatsApp Image 2026-07-21 at 11.33.35.jpeg" alt="Limera Raflarında" class="w-full h-auto rounded-sm shadow-lg self-start object-cover">
                         </div>
                     </div>
                 </div>
@@ -590,120 +538,6 @@
         window.onload = function() {
             initThreeJS();
         };
-
-        // GEMINI API CHAT FUNCTIONALITY WITH EXPONENTIAL BACKOFF
-        function askPrompt(question) {
-            document.getElementById('ai-user-input').value = question;
-            sendToGemini();
-        }
-
-        async function callGeminiWithBackoff(payload, retries = 3, delay = 1000) {
-            const apiKey = ""; // Runtime automatically provides API key when empty
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
-            
-            for (let i = 0; i < retries; i++) {
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    if (response.ok) {
-                        return await response.json();
-                    }
-                    if (response.status === 429 && i < retries - 1) {
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                        delay *= 2; // exponential backoff
-                        continue;
-                    }
-                    throw new Error(`API error: ${response.status}`);
-                } catch (err) {
-                    if (i === retries - 1) throw err;
-                    await new Promise(resolve => setTimeout(resolve, delay));
-                    delay *= 2;
-                }
-            }
-        }
-
-        async function sendToGemini() {
-            const inputField = document.getElementById('ai-user-input');
-            const historyContainer = document.getElementById('ai-chat-history');
-            const sendBtn = document.getElementById('ai-send-btn');
-            const query = inputField.value.trim();
-
-            if (!query) return;
-
-            // Append User Message
-            const userBubble = document.createElement('div');
-            userBubble.className = 'flex items-start gap-3 justify-end';
-            userBubble.innerHTML = `
-                <div class="bg-brand-gold/20 text-white p-4 rounded-lg rounded-tr-none font-serif text-sm leading-relaxed border border-brand-gold/30 max-w-[80%]">
-                    ${escapeHtml(query)}
-                </div>
-                <div class="w-8 h-8 rounded-full bg-gray-700 text-gray-200 flex items-center justify-center font-bold text-xs shrink-0">Siz</div>
-            `;
-            historyContainer.appendChild(userBubble);
-            inputField.value = '';
-            historyContainer.scrollTop = historyContainer.scrollHeight;
-
-            // Append Loading Indicator
-            const loadingBubble = document.createElement('div');
-            loadingBubble.id = 'ai-loading';
-            loadingBubble.className = 'flex items-start gap-3';
-            loadingBubble.innerHTML = `
-                <div class="w-8 h-8 rounded-full bg-brand-gold text-brand-dark flex items-center justify-center font-bold shrink-0">TÖ</div>
-                <div class="bg-[#1F2937] text-gray-400 p-4 rounded-lg rounded-tl-none font-serif text-sm italic border border-brand-gold/10">
-                    Felsefi zihin yanıtı kurguluyor...
-                </div>
-            `;
-            historyContainer.appendChild(loadingBubble);
-            historyContainer.scrollTop = historyContainer.scrollHeight;
-            sendBtn.disabled = true;
-
-            const systemPrompt = "Sen 'Kaosun Mimarı İnsan' ve 'Düzenin Savunucusu İnsan' kitaplarının yazarı Tolga Özdoğan'ın zihnini yansıtan edebi ve felsefi bir yapay zeka asistanısın. Entropi, kaos, düzen arayışı, insan doğası ve kurgunun felsefesi üzerine derin, zarif, Türkçe yanıtlar ver.";
-
-            const payload = {
-                contents: [{ parts: [{ text: query }] }],
-                systemInstruction: { parts: [{ text: systemPrompt }] }
-            };
-
-            try {
-                const result = await callGeminiWithBackoff(payload);
-                document.getElementById('ai-loading').remove();
-                
-                const candidate = result.candidates?.[0];
-                const reply = candidate?.content?.parts?.[0]?.text || "Bu evrende bu sorunun yanıtı henüz yazılmadı...";
-
-                const aiBubble = document.createElement('div');
-                aiBubble.className = 'flex items-start gap-3';
-                aiBubble.innerHTML = `
-                    <div class="w-8 h-8 rounded-full bg-brand-gold text-brand-dark flex items-center justify-center font-bold shrink-0">TÖ</div>
-                    <div class="bg-[#1F2937] text-gray-200 p-4 rounded-lg rounded-tl-none font-serif text-sm leading-relaxed border border-brand-gold/10 max-w-[85%]">
-                        ${escapeHtml(reply)}
-                    </div>
-                `;
-                historyContainer.appendChild(aiBubble);
-            } catch (error) {
-                document.getElementById('ai-loading').remove();
-                const errBubble = document.createElement('div');
-                errBubble.className = 'flex items-start gap-3';
-                errBubble.innerHTML = `
-                    <div class="w-8 h-8 rounded-full bg-red-800 text-white flex items-center justify-center font-bold shrink-0">!</div>
-                    <div class="bg-[#1F2937] text-red-300 p-4 rounded-lg rounded-tl-none font-serif text-sm border border-red-500/30">
-                        Zihinsel bağlantıda geçici bir entropi dalgalanması yaşandı. Lütfen tekrar deneyin.
-                    </div>
-                `;
-                historyContainer.appendChild(errBubble);
-            } finally {
-                sendBtn.disabled = false;
-                historyContainer.scrollTop = historyContainer.scrollHeight;
-            }
-        }
-
-        function escapeHtml(text) {
-            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-            return text.replace(/[&<>"']/g, m => map[m]);
-        }
     </script>
 </body>
 </html>

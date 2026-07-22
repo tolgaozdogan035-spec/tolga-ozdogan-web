@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sosyal Medya | Tolga Özdoğan</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#0B0F19',
+                        'brand-gold': '#D4AF37',
+                        'brand-gray': '#A0AAB2',
+                    },
+                    fontFamily: {
+                        'display': ['Cinzel', 'serif'],
+                        'serif': ['Lora', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'signature': ['Alex Brush', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0B0F19; color: #E2E8F0; font-family: 'Lora', serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0F19; }
+        ::-webkit-scrollbar-thumb { background: #2A3650; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- Header / Nav -->
+    <header class="text-center py-12 px-6 bg-gradient-to-b from-[#162244] to-brand-dark border-b border-brand-gold/20">
+        <a href="index.html" class="font-signature text-5xl md:text-6xl text-brand-gold hover:text-white transition-colors tracking-wide block mb-2">Tolga Özdoğan</a>
+        <div class="font-display text-xs md:text-sm tracking-[0.3em] uppercase text-brand-gray mb-6">Sosyal Medya & Güncel Paylaşımlar</div>
+        <a href="index.html" class="inline-block border border-brand-gold text-brand-gold px-6 py-2 rounded-sm font-sans text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-brand-dark transition-all duration-300">
+            &#8592; Ana Sayfaya Dön
+        </a>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-6xl mx-auto px-6 py-20">
+        
+        <div class="text-center mb-16">
+            <h1 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Anlık Paylaşımlar & Gönderiler</h1>
+            <div class="w-24 h-px bg-brand-gold mx-auto mb-6"></div>
+            <p class="font-sans text-brand-gray text-sm md:text-base max-w-xl mx-auto">
+                Instagram ve LinkedIn üzerinden paylaştığım felsefi kesitler, yazar masası notları ve güncel duyurular burada yer alır.
+            </p>
+        </div>
+
+        <!-- Social Media Grid / Mock Feed Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Post 1 (Instagram Style) -->
+            <div class="bg-[#111724] border border-brand-gray/10 hover:border-brand-gold/40 transition-all duration-300 rounded-sm overflow-hidden flex flex-col justify-between shadow-xl">
+                <div>
+                    <!-- Post Header -->
+                    <div class="flex items-center justify-between p-4 border-b border-brand-gray/10">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">TÖ</div>
+                            <span class="font-sans text-xs tracking-wider text-white">tolgaozdogan35</span>
+                        </div>
+                        <i class="fab fa-instagram text-brand-gold text-lg"></i>
+                    </div>
+                    <!-- Post Image / Graphic Simulation -->
+                    <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-8 text-center border-b border-brand-gray/10">
+                        <p class="font-serif italic text-brand-gold text-lg leading-relaxed">"Kaos, düzenin hammaddesidir."</p>
+                    </div>
+                    <!-- Post Caption -->
+                    <div class="p-6">
+                        <p class="font-serif text-brand-gray text-sm leading-relaxed mb-4">
+                            Yazı masasında yeni bir bölüm şekillenirken... Zihindeki entropiyi kelimelerle zapt etme çabası. #KaosunMimarıİnsan #YazarGünlükleri
+                        </p>
+                        <span class="font-sans text-[10px] text-brand-gray/50 uppercase tracking-widest">Instagram Gönderisi</span>
+                    </div>
+                </div>
+                <div class="p-4 bg-[#0d1320] border-t border-brand-gray/10 text-right">
+                    <a href="https://www.instagram.com/tolgaozdogan35?igsh=MWt1MHc5eGxwa285bQ==" target="_blank" class="font-sans text-xs text-brand-gold hover:underline uppercase tracking-wider">Gönderiye Git <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+
+            <!-- Post 2 (LinkedIn Style) -->
+            <div class="bg-[#111724] border border-brand-gray/10 hover:border-brand-gold/40 transition-all duration-300 rounded-sm overflow-hidden flex flex-col justify-between shadow-xl">
+                <div>
+                    <!-- Post Header -->
+                    <div class="flex items-center justify-between p-4 border-b border-brand-gray/10">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">TÖ</div>
+                            <span class="font-sans text-xs tracking-wider text-white">Tolga Özdoğan</span>
+                        </div>
+                        <i class="fab fa-linkedin text-brand-gold text-lg"></i>
+                    </div>
+                    <!-- Post Content -->
+                    <div class="p-6">
+                        <p class="font-serif text-brand-gray text-sm leading-relaxed mb-4">
+                            Kurumsal yönetim deneyimleri ile kurgusal evrenlerin inşası arasındaki paralellikler üzerine keyifli bir makale kaleme aldım. Tarihsel süreçte sistemlerin organizasyon yapısı ve insan psikolojisi...
+                        </p>
+                        <span class="font-sans text-[10px] text-brand-gray/50 uppercase tracking-widest">LinkedIn Makale Duyurusu</span>
+                    </div>
+                </div>
+                <div class="p-4 bg-[#0d1320] border-t border-brand-gray/10 text-right">
+                    <a href="https://www.linkedin.com/in/tolgaözdoğan" target="_blank" class="font-sans text-xs text-brand-gold hover:underline uppercase tracking-wider">Profilden İncele <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+
+            <!-- Post 3 (Instagram Announcement) -->
+            <div class="bg-[#111724] border border-brand-gray/10 hover:border-brand-gold/40 transition-all duration-300 rounded-sm overflow-hidden flex flex-col justify-between shadow-xl">
+                <div>
+                    <!-- Post Header -->
+                    <div class="flex items-center justify-between p-4 border-b border-brand-gray/10">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">TÖ</div>
+                            <span class="font-sans text-xs tracking-wider text-white">tolgaozdogan35</span>
+                        </div>
+                        <i class="fab fa-instagram text-brand-gold text-lg"></i>
+                    </div>
+                    <!-- Post Image Simulation -->
+                    <div class="aspect-square bg-gray-900 relative flex items-center justify-center p-8 text-center border-b border-brand-gray/10">
+                        <p class="font-display text-white text-xl tracking-widest">İLK BÖLÜM OKUMALARI</p>
+                    </div>
+                    <!-- Post Caption -->
+                    <div class="p-6">
+                        <p class="font-serif text-brand-gray text-sm leading-relaxed mb-4">
+                            Kaosun Mimarı İnsan kitabından seçilen özel satırlar ve imza günlerinden kareler. İlginiz için teşekkürler.
+                        </p>
+                        <span class="font-sans text-[10px] text-brand-gray/50 uppercase tracking-widest">Instagram Fotoğrafı</span>
+                    </div>
+                </div>
+                <div class="p-4 bg-[#0d1320] border-t border-brand-gray/10 text-right">
+                    <a href="https://www.instagram.com/tolgaozdogan35?igsh=MWt1MHc5eGxwa285bQ==" target="_blank" class="font-sans text-xs text-brand-gold hover:underline uppercase tracking-wider">Gönderiye Git <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Direct Follow Banner -->
+        <div class="mt-20 text-center bg-[#111724] border border-brand-gold/30 p-12 rounded-sm shadow-2xl">
+            <h3 class="font-display text-2xl text-white mb-4">Sosyal Medyada Bağlantıda Kalın</h3>
+            <p class="font-serif text-brand-gray max-w-lg mx-auto mb-8 text-sm">
+                Yeni kurgu projelerim, imza günlerim ve felsefi paylaşımlarımdan anında haberdar olmak için profillerimi takip edebilirsiniz.
+            </p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="https://www.linkedin.com/in/tolgaözdoğan" target="_blank" class="px-8 py-3 border border-brand-gold text-brand-gold font-sans text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-brand-dark transition-all duration-300">
+                    <i class="fab fa-linkedin mr-2"></i> LinkedIn'de Takip Et
+                </a>
+                <a href="https://www.instagram.com/tolgaozdogan35?igsh=MWt1MHc5eGxwa285bQ==" target="_blank" class="px-8 py-3 border border-brand-gold text-brand-gold font-sans text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-brand-dark transition-all duration-300">
+                    <i class="fab fa-instagram mr-2"></i> Instagram'da Takip Et
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-10 border-t border-brand-gold/20 text-center font-sans text-xs text-brand-gray/60">
+        &copy; <span id="year"></span> Tolga Özdoğan. Tüm hakları saklıdır.
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

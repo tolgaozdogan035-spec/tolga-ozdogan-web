@@ -4,14 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tolga Özdoğan | Yazar</title>
-    <!-- Google Fonts for elegant typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome for Icons -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -19,83 +15,36 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-dark': '#0B0F19', /* Very deep midnight blue */
-                        'brand-gold': '#D4AF37', /* Metallic Gold accent */
-                        'brand-gold-hover': '#F3E5AB',
+                        'brand-dark': '#0B0F19',
+                        'brand-gold': '#D4AF37',
                         'brand-gray': '#A0AAB2',
                     },
                     fontFamily: {
-                        'display': ['Cinzel', 'serif'], /* For large, impactful titles */
-                        'serif': ['Lora', 'serif'],    /* For body text, book excerpts - ebook feel */
-                        'sans': ['Montserrat', 'sans-serif'], /* For UI elements, small text */
-                        'signature': ['Alex Brush', 'cursive'], /* For the author signature logo */
+                        'display': ['Cinzel', 'serif'],
+                        'serif': ['Lora', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'signature': ['Alex Brush', 'cursive'],
                     }
                 }
             }
         }
     </script>
-    
-    <!-- Three.js for Hero Animation -->
+    <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
     <style>
-        /* Core Styling */
-        body {
-            background-color: #0B0F19;
-            color: #E2E8F0;
-            overflow-x: hidden;
-        }
-
-        /* Hide scrollbar for a cleaner look, but keep functionality */
+        body { background-color: #0B0F19; color: #E2E8F0; overflow-x: hidden; font-family: 'Lora', serif; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0B0F19; }
         ::-webkit-scrollbar-thumb { background: #2A3650; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
-
-        /* Hero Canvas Overlay */
-        #hero-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: 0;
-            opacity: 0.6;
-            pointer-events: none; /* Let clicks pass through to content */
-        }
-
+        #hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100vh; z-index: 0; opacity: 0.6; pointer-events: none; }
         .relative-z { position: relative; z-index: 10; }
-
-        /* Typography Utilities */
-        .text-gold-gradient {
-            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Interactive Elements */
-        .book-card {
-            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-        
-        .book-cover {
-            box-shadow: -15px 15px 30px -5px rgba(0,0,0,0.8), inset 2px 0px 5px rgba(255,255,255,0.2);
-            transition: transform 0.6s ease;
-            transform-origin: left center;
-        }
-
-        .book-card:hover .book-cover {
-            transform: rotateY(-15deg) scale(1.02);
-            box-shadow: -20px 20px 40px -5px rgba(0,0,0,0.9), inset 2px 0px 5px rgba(255,255,255,0.3);
-        }
-
-        /* Smooth reveal animation classes */
+        .text-gold-gradient { background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .book-card { transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); transform-style: preserve-3d; perspective: 1000px; }
+        .book-cover { box-shadow: -15px 15px 30px -5px rgba(0,0,0,0.8), inset 2px 0px 5px rgba(255,255,255,0.2); transition: transform 0.6s ease; transform-origin: left center; }
+        .book-card:hover .book-cover { transform: rotateY(-15deg) scale(1.02); }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* Custom selection color */
         ::selection { background: #D4AF37; color: #0B0F19; }
     </style>
 </head>
@@ -104,44 +53,39 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-brand-dark/80 border-b border-brand-gold/10 py-4" id="navbar">
         <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-            <a href="#" class="font-signature text-2xl md:text-3xl text-brand-gold hover:text-white transition-colors tracking-wide">Tolga Özdoğan</a>
+            <a href="#" class="font-signature text-3xl md:text-4xl text-brand-gold hover:text-white transition-colors tracking-wide">Tolga Özdoğan</a>
             
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-6 font-sans text-xs tracking-wide items-center">
+            <div class="hidden lg:flex space-x-6 font-sans text-xs tracking-wide items-center">
                 <a href="#eserler" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Eserler</a>
                 <a href="#yazar" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Yazar Hakkında</a>
                 <a href="#dusunce-defteri" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Düşünce Defteri</a>
                 <a href="sosyal-medya.html" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Sosyal Medya</a>
+                <a href="basin.html" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Basında Biz</a>
                 <a href="#iletisim" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">İletişim</a>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-brand-gold focus:outline-none" onclick="toggleMobileMenu()">
+            <button class="lg:hidden text-brand-gold focus:outline-none" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
         
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-brand-dark border-b border-brand-gold/20 py-4 px-6 flex flex-col space-y-4 shadow-2xl">
+        <div id="mobile-menu" class="hidden lg:hidden absolute w-full bg-brand-dark border-b border-brand-gold/20 py-4 px-6 flex flex-col space-y-4 shadow-2xl">
              <a href="#eserler" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2" onclick="toggleMobileMenu()">Eserler</a>
              <a href="#yazar" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2" onclick="toggleMobileMenu()">Yazar Hakkında</a>
              <a href="#dusunce-defteri" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2" onclick="toggleMobileMenu()">Düşünce Defteri</a>
              <a href="sosyal-medya.html" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Sosyal Medya</a>
+             <a href="basin.html" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Basında Biz</a>
              <a href="#iletisim" class="text-white hover:text-brand-gold font-sans uppercase text-sm" onclick="toggleMobileMenu()">İletişim</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <!-- 3D Particle Canvas Background -->
         <div id="hero-canvas"></div>
-        
-        <!-- Gradient Overlay to ensure text readability -->
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-dark/50 to-brand-dark z-1"></div>
 
         <div class="relative-z text-center px-6 max-w-4xl mx-auto mt-20">
-            <!-- İMZA - Yeniden Dengelenmiş Zarif Boyut -->
-            <h2 class="font-signature text-4xl md:text-6xl text-brand-gold tracking-wider mb-2 opacity-0 animate-[fadeIn_2s_ease-out_forwards]">Tolga Özdoğan</h2>
+            <h2 class="font-signature text-3xl md:text-5xl text-brand-gold tracking-wider mb-2 opacity-0 animate-[fadeIn_2s_ease-out_forwards]">Tolga Özdoğan</h2>
             <h3 class="font-sans text-brand-gray tracking-[0.3em] uppercase text-xs md:text-sm mb-10 opacity-0 animate-[fadeIn_2s_ease-out_0.5s_forwards]">Yazar</h3>
             
             <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 opacity-0 animate-[slideUp_1.5s_ease-out_1s_forwards]">
@@ -161,7 +105,6 @@
             </div>
         </div>
         
-        <!-- Scroll indicator -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce relative-z">
             <a href="#eserler" class="text-brand-gold/50 hover:text-brand-gold transition-colors">
                 <i class="fas fa-chevron-down text-xl"></i>
@@ -181,7 +124,7 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                 
-                <!-- Book 1: Chaos -->
+                <!-- Book 1 -->
                 <div class="book-card reveal flex flex-col md:flex-row gap-8 items-center lg:items-start group">
                     <div class="w-2/3 md:w-1/2 lg:w-[300px] shrink-0 relative">
                         <div class="book-cover aspect-[2/3] relative overflow-hidden rounded-r-md rounded-l-sm border-l-4 border-gray-900 bg-gray-900 shadow-2xl flex items-center justify-center">
@@ -196,23 +139,22 @@
                             Bize dayatılan kalıpları kırıp, kaosun ortasında kendi düzenimizi nasıl inşa ederiz? Ataların yankısı, vicdan sorgulaması ve insanın kendi karanlığıyla yüzleştiği o tekinsiz ama özgürleştirici alan.
                         </p>
                         
-                        <!-- Sales Links with Prominent Styling -->
                         <div class="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
                             <p class="w-full text-xs text-brand-gray/60 uppercase tracking-widest mb-2 font-sans text-center md:text-left">Satın Al:</p>
-                            <a href="https://www.kitapyurdu.com/kitap/kaosun-mimari-insan/762120.html?srsltid=AfmBOoo-wdexJbnLIEMPqNhFlqk2J3clTyeXB27SwQNVSoFF96WTzYV6" target="_blank" class="flex-1 min-w-[120px] text-center px-4 py-3 border border-brand-gold rounded-sm text-brand-gold font-sans text-xs uppercase tracking-wider bg-brand-gold/5 hover:bg-brand-gold hover:text-brand-dark hover:font-semibold transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.15)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]">
+                            <a href="https://www.kitapyurdu.com/kitap/kaosun-mimari-insan/762120.html" target="_blank" class="flex-1 min-w-[120px] text-center px-4 py-3 border border-brand-gold rounded-sm text-brand-gold font-sans text-xs uppercase tracking-wider bg-brand-gold/5 hover:bg-brand-gold hover:text-brand-dark hover:font-semibold transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.15)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]">
                                 Kitapyurdu
                             </a>
                             <a href="https://www.limerayayinlari.com/kitap/kaosun-mimari-insan--1780938998656" target="_blank" class="flex-1 min-w-[120px] text-center px-4 py-3 border border-brand-gold rounded-sm text-brand-gold font-sans text-xs uppercase tracking-wider bg-brand-gold/5 hover:bg-brand-gold hover:text-brand-dark hover:font-semibold transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.15)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]">
                                 Limera
                             </a>
-                            <a href="https://www.trendyol.com/pd/limera-yayinlari/kaosun-mimari-insan-tolga-ozdogan-p-1173892194?boutiqueId=61&merchantId=1292855" target="_blank" class="flex-1 min-w-[120px] text-center px-4 py-3 border border-brand-gold rounded-sm text-brand-gold font-sans text-xs uppercase tracking-wider bg-brand-gold/5 hover:bg-brand-gold hover:text-brand-dark hover:font-semibold transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.15)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]">
+                            <a href="https://www.trendyol.com/pd/limera-yayinlari/kaosun-mimari-insan-tolga-ozdogan-p-1173892194" target="_blank" class="flex-1 min-w-[120px] text-center px-4 py-3 border border-brand-gold rounded-sm text-brand-gold font-sans text-xs uppercase tracking-wider bg-brand-gold/5 hover:bg-brand-gold hover:text-brand-dark hover:font-semibold transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.15)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]">
                                 Trendyol
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Book 2: Order -->
+                <!-- Book 2 -->
                 <div class="book-card reveal flex flex-col md:flex-row-reverse gap-8 items-center lg:items-start group lg:mt-32">
                     <div class="w-2/3 md:w-1/2 lg:w-[300px] shrink-0 relative">
                         <div class="book-cover aspect-[2/3] relative overflow-hidden rounded-r-md rounded-l-sm border-l-4 border-gray-400 bg-gray-200 shadow-2xl flex items-center justify-center">
@@ -241,15 +183,12 @@
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Author Images Grid (Colorful & Balanced) -->
                 <div class="lg:col-span-5 reveal">
                     <div class="flex flex-col gap-6 relative">
-                        <!-- Main Author Image -->
                         <div class="relative">
                             <div class="absolute -inset-2 border border-brand-gold/30 rounded-sm transform translate-x-2 translate-y-2"></div>
                             <img src="Tolga1.png" alt="Tolga Özdoğan - Yazar" class="w-full h-auto rounded-sm shadow-2xl relative z-10 object-cover">
                         </div>
-                        <!-- Bottom Images Row -->
                         <div class="grid grid-cols-2 gap-4">
                              <img src="5.png" alt="Tolga Özdoğan Çalışırken" class="w-full h-auto rounded-sm shadow-lg self-start object-cover">
                              <img src="WhatsApp Image 2026-07-21 at 11.33.35.jpeg" alt="Limera Raflarında" class="w-full h-auto rounded-sm shadow-lg self-start object-cover">
@@ -257,7 +196,6 @@
                     </div>
                 </div>
 
-                <!-- Biography Content -->
                 <div class="lg:col-span-7 lg:pl-10 reveal">
                     <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-2">Tolga Özdoğan</h2>
                     <p class="font-sans text-brand-gold tracking-widest text-sm mb-8 uppercase">Yazar</p>
@@ -269,13 +207,9 @@
                         <p>
                             Kuantum fiziğinden Antik Roma ve Osmanlı tarihine, kriptolojiden nöroteknolojiye kadar uzanan geniş ve disiplinlerarası ilgi alanları, eserlerin felsefi altyapısını oluşturur. Kurumsal yaşamda kitle psikolojisi ve organizasyonel yapı üzerine edinilen yönetsel tecrübeler, karakterlerin iç dünyasına ve toplumsal olaylara verilen tepkilere doğrudan yansır.
                         </p>
-                        <p>
-                            Amacım, okura sadece sürükleyici bir hikaye anlatmak değil; onu entropi, insan doğası ve ahlakın tasarımı üzerine kendi içindeki kaosu düzenlemeye veya mevcut düzenini sorgulamaya davet eden felsefi bir alan yaratmaktır.
-                        </p>
                     </div>
 
-                    <!-- Dikkat Çekici Sosyal Medya Butonları -->
-                    <div class="mt-10 flex gap-4">
+                    <div class="mt-10 flex gap-4 flex-wrap">
                         <a href="https://www.linkedin.com/in/tolgaözdoğan" target="_blank" class="flex items-center gap-3 px-6 py-3 border border-brand-gold/50 rounded-sm bg-brand-gold/5 text-brand-gold font-sans text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-brand-dark hover:font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.15)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)]">
                             <i class="fab fa-linkedin text-lg"></i> LinkedIn
                         </a>
@@ -289,7 +223,7 @@
         </div>
     </section>
 
-    <!-- Düşünce Defteri (Blog) Section -->
+    <!-- Düşünce Defteri Section -->
     <section id="dusunce-defteri" class="py-24 bg-brand-dark relative border-t border-brand-gold/10">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             
@@ -303,7 +237,6 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Blog Post 1 -->
                 <article class="bg-[#111724] border border-brand-gray/10 hover:border-brand-gold/50 transition-all duration-300 p-8 flex flex-col justify-between h-full reveal rounded-sm group cursor-pointer" onclick="window.location.href='dusunce-defteri.html'">
                     <div>
                         <span class="font-sans text-brand-gold text-xs tracking-widest uppercase mb-4 block">Felsefe & Bilim</span>
@@ -314,7 +247,6 @@
                     </div>
                 </article>
 
-                <!-- Blog Post 2 -->
                 <article class="bg-[#111724] border border-brand-gray/10 hover:border-brand-gold/50 transition-all duration-300 p-8 flex flex-col justify-between h-full reveal rounded-sm group cursor-pointer lg:mt-8" onclick="window.location.href='dusunce-defteri.html'">
                     <div>
                         <span class="font-sans text-brand-gold text-xs tracking-widest uppercase mb-4 block">Tarih</span>
@@ -325,7 +257,6 @@
                     </div>
                 </article>
 
-                <!-- Blog Post 3 -->
                 <article class="bg-[#111724] border border-brand-gray/10 hover:border-brand-gold/50 transition-all duration-300 p-8 flex flex-col justify-between h-full reveal rounded-sm group cursor-pointer lg:mt-16" onclick="window.location.href='dusunce-defteri.html'">
                     <div>
                         <span class="font-sans text-brand-gold text-xs tracking-widest uppercase mb-4 block">Yazım Süreci</span>
@@ -344,7 +275,7 @@
         </div>
     </section>
 
-    <!-- İletişim Section (Formspree Integrated) -->
+    <!-- İletişim Section -->
     <section id="iletisim" class="py-24 bg-[#080B12] relative border-t border-brand-gold/10">
         <div class="max-w-4xl mx-auto px-6 md:px-12 text-center reveal">
             <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">İletişime Geçin</h2>
@@ -389,20 +320,11 @@
     </footer>
 
     <script>
-        // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Mobile Menu Toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-            }
+            menu.classList.toggle('hidden');
         }
-
-        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -413,107 +335,49 @@
                 nav.classList.add('bg-brand-dark/80');
             }
         });
-
-        // Scroll Reveal Animation Observer
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Reveal only once
+                    obs.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        document.querySelectorAll('.reveal').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Add Keyframe Animations dynamically for Tailwind usage
         const style = document.createElement('style');
         style.innerHTML = `
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            @keyframes slideUp {
-                from { opacity: 0; transform: translateY(30px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
+            @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+            @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         `;
         document.head.appendChild(style);
 
-        /* 
-         * THREE.JS BACKGROUND ANIMATION 
-         * Abstract representation of Chaos and Order
-         */
         function initThreeJS() {
-            const canvasContainer = document.getElementById('hero-canvas');
-            if (!canvasContainer) return;
-
+            const container = document.getElementById('hero-canvas');
+            if (!container) return;
             const scene = new THREE.Scene();
             scene.fog = new THREE.FogExp2(0x0B0F19, 0.001);
-
             const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             camera.position.z = 100;
-
             const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(window.devicePixelRatio);
-            canvasContainer.appendChild(renderer.domElement);
+            container.appendChild(renderer.domElement);
 
-            const particlesGeometry = new THREE.BufferGeometry();
-            const particlesCount = 2000;
-            const posArray = new Float32Array(particlesCount * 3);
+            const geom = new THREE.BufferGeometry();
+            const count = 2000;
+            const pos = new Float32Array(count * 3);
+            for(let i=0; i<count*3; i++) pos[i] = (Math.random() - 0.5) * 300;
+            geom.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+            const mat = new THREE.PointsMaterial({ size: 0.5, color: 0xD4AF37, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending });
+            const mesh = new THREE.Points(geom, mat);
+            scene.add(mesh);
 
-            for(let i = 0; i < particlesCount * 3; i++) {
-                posArray[i] = (Math.random() - 0.5) * 300; 
-            }
-            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-
-            const particlesMaterial = new THREE.PointsMaterial({
-                size: 0.5,
-                color: 0xD4AF37,
-                transparent: true,
-                opacity: 0.5,
-                blending: THREE.AdditiveBlending
+            let mouseX = 0, mouseY = 0;
+            document.addEventListener('mousemove', e => {
+                mouseX = (e.clientX - window.innerWidth/2) * 0.05;
+                mouseY = (e.clientY - window.innerHeight/2) * 0.05;
             });
-
-            const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-            scene.add(particlesMesh);
-
-            const linesMaterial = new THREE.LineBasicMaterial({ 
-                color: 0xffffff, 
-                transparent: true, 
-                opacity: 0.03 
-            });
-            const linesGeometry = new THREE.BufferGeometry();
-            const linePositions = new Float32Array(300 * 3);
-            for(let i=0; i<300*3; i++){
-                linePositions[i] = posArray[i]; 
-            }
-            linesGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-            const linesMesh = new THREE.Line(linesGeometry, linesMaterial);
-            scene.add(linesMesh);
-
-            let mouseX = 0;
-            let mouseY = 0;
-            let targetX = 0;
-            let targetY = 0;
-
-            const windowHalfX = window.innerWidth / 2;
-            const windowHalfY = window.innerHeight / 2;
-
-            document.addEventListener('mousemove', (event) => {
-                mouseX = (event.clientX - windowHalfX) * 0.05;
-                mouseY = (event.clientY - windowHalfY) * 0.05;
-            });
-
             window.addEventListener('resize', () => {
                 camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
@@ -521,31 +385,16 @@
             });
 
             const clock = new THREE.Clock();
-
             function animate() {
                 requestAnimationFrame(animate);
-                const elapsedTime = clock.getElapsedTime();
-
-                particlesMesh.rotation.y = elapsedTime * 0.02;
-                particlesMesh.rotation.x = elapsedTime * 0.01;
-                linesMesh.rotation.y = elapsedTime * 0.02;
-                linesMesh.rotation.x = elapsedTime * 0.01;
-
-                targetX = mouseX * 0.1;
-                targetY = mouseY * 0.1;
-                
-                particlesMesh.rotation.y += 0.05 * (targetX - particlesMesh.rotation.y);
-                particlesMesh.rotation.x += 0.05 * (targetY - particlesMesh.rotation.x);
-
+                const t = clock.getElapsedTime();
+                mesh.rotation.y = t * 0.02 + mouseX * 0.001;
+                mesh.rotation.x = t * 0.01 + mouseY * 0.001;
                 renderer.render(scene, camera);
             }
-
             animate();
         }
-
-        window.onload = function() {
-            initThreeJS();
-        };
+        window.onload = initThreeJS;
     </script>
 </body>
 </html>

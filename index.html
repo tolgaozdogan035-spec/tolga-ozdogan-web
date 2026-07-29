@@ -24,6 +24,16 @@
                         'serif': ['Lora', 'serif'],
                         'sans': ['Montserrat', 'sans-serif'],
                         'signature': ['Alex Brush', 'cursive'],
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
                     }
                 }
             }
@@ -50,7 +60,6 @@
 </head>
 <body class="antialiased selection:bg-brand-gold selection:text-brand-dark">
 
-    <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-brand-dark/80 border-b border-brand-gold/10 py-4" id="navbar">
         <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
             <a href="#" class="font-signature text-3xl md:text-4xl text-brand-gold hover:text-white transition-colors tracking-wide">Tolga Özdoğan</a>
@@ -79,10 +88,23 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div id="hero-canvas"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-dark/50 to-brand-dark z-1"></div>
+
+        <!-- Left Banner (Hidden on mobile/tablet) -->
+        <div class="hidden xl:block absolute left-8 top-1/2 -translate-y-1/2 z-20 w-[200px] xl:w-[250px] opacity-0 animate-[fadeIn_2s_ease-out_1s_forwards]">
+            <a href="#eserler" class="block transition-transform duration-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] rounded-lg overflow-hidden animate-float-slow">
+                <img src="Banner-1.png" alt="Kaosun Mimarı İnsan Banner" class="w-full h-auto object-cover rounded-lg border border-brand-gold/30">
+            </a>
+        </div>
+
+        <!-- Right Banner (Hidden on mobile/tablet) -->
+        <div class="hidden xl:block absolute right-8 top-1/2 -translate-y-1/2 z-20 w-[200px] xl:w-[250px] opacity-0 animate-[fadeIn_2s_ease-out_1.5s_forwards]">
+            <a href="#eserler" class="block transition-transform duration-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] rounded-lg overflow-hidden animate-float-delayed">
+                <img src="Banner-2.png" alt="Düzenin Savunucusu İnsan Banner" class="w-full h-auto object-cover rounded-lg border border-brand-gold/30">
+            </a>
+        </div>
 
         <div class="relative-z text-center px-6 max-w-4xl mx-auto mt-20">
             <h2 class="font-signature text-3xl md:text-5xl text-brand-gold tracking-wider mb-2 opacity-0 animate-[fadeIn_2s_ease-out_forwards]">Tolga Özdoğan</h2>
@@ -112,7 +134,6 @@
         </div>
     </section>
 
-    <!-- Eserler Section -->
     <section id="eserler" class="py-24 relative bg-brand-dark">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             
@@ -141,26 +162,12 @@
                         
                         <div class="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
                             <p class="w-full text-xs text-brand-gray/60 uppercase tracking-widest mb-2 font-sans text-center md:text-left">Satın Al:</p>
-                            <!-- GÜNCELLENEN KISIM: 6 Adet Mağaza Linki -->
-                            <a href="https://www.kitapyurdu.com/kitap/kaosun-mimari-insan/762120.html" target="_blank" class="flex-1 min-w-[100px] text-center px-3 py-2 border border-brand-gold rounded-sm text-brand-gold font-sans text-[10px] uppercase tracking-wider bg-brand-gold/5 hover:bg-brand-gold hover:text-brand-dark hover:font-semibold transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.15)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]">
-                                Kitapyurdu
-                            </a>
-                            <a href="https://www.limerayayinlari.com/kitap/kaosun-mimari-insan--1780938998656" target="_blank" class="flex-1 min-w-[100px] text-center px-3 py-2 border border-brand-gold rounded-sm text-brand-gold font-sans text-[10px] uppercase tracking-wider bg-brand-gold/5 hover:bg-brand-gold hover:text-brand-dark hover:font-semibold transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.15)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]">
-                                Limera
-                            </a>
-                            <a href="https://www.trendyol.com/pd/limera-yayinlari/kaosun-mimari-insan-tolga-ozdogan-p-1173892194" target="_blank" class="flex-1 min-w-[100px] text-center px-3 py-2 border border-brand-gold rounded-sm text-brand-gold font-sans text-[10px] uppercase tracking-wider bg-brand-gold/5 hover:bg-brand-gold hover:text-brand-dark hover:font-semibold transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.15)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]">
-                                Trendyol
-                            </a>
-                            <!-- Yeni Linkler -->
-                            <a href="https://www.kitapaloku.com/kisi/221566/tolga-ozdogan/" target="_blank" class="flex-1 min-w-[100px] text-center px-3 py-2 border border-brand-gold rounded-sm text-brand-gold font-sans text-[10px] uppercase tracking-wider bg-brand-gold/5 hover:bg-brand-gold hover:text-brand-dark hover:font-semibold transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.15)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]">
-                                KitapAlOku
-                            </a>
-                            <a href="https://www.nadirkitap.com/kaosun-mimari-insan-tolga-ozdogan-limera-yayinlari-kitap48159940.html?srsltid=AfmBOoraxQ-bbCzLRZ55nD4hMUAhzs_qgB_A_nsUUKfEPFhLzeTYvRrT" target="_blank" class="flex-1 min-w-[100px] text-center px-3 py-2 border border-brand-gold rounded-sm text-brand-gold font-sans text-[10px] uppercase tracking-wider bg-brand-gold/5 hover:bg-brand-gold hover:text-brand-dark hover:font-semibold transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.15)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]">
-                                NadirKitap
-                            </a>
-                            <a href="https://www.kitapstore.com/urun/781269/kitap/limera-yayinlari/tolga-ozdogan/kaosun-mimari-insan/" target="_blank" class="flex-1 min-w-[100px] text-center px-3 py-2 border border-brand-gold rounded-sm text-brand-gold font-sans text-[10px] uppercase tracking-wider bg-brand-gold/5 hover:bg-brand-gold hover:text-brand-dark hover:font-semibold transition-all duration-300 shadow-[0_0_10px_rgba(212,175,55,0.15)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]">
-                                KitapStore
-                            </a>
+                            <a href="https://www.kitapyurdu.com/kitap/kaosun-mimari-insan/762120.html" target="_blank" class="px-4 py-2 border border-brand-gold rounded-sm text-brand-gold text-xs hover:bg-brand-gold hover:text-brand-dark transition-all">Kitapyurdu</a>
+                            <a href="https://www.limerayayinlari.com/kitap/kaosun-mimari-insan--1780938998656" target="_blank" class="px-4 py-2 border border-brand-gold rounded-sm text-brand-gold text-xs hover:bg-brand-gold hover:text-brand-dark transition-all">Limera</a>
+                            <a href="https://www.trendyol.com/pd/limera-yayinlari/kaosun-mimari-insan-tolga-ozdogan-p-1173892194" target="_blank" class="px-4 py-2 border border-brand-gold rounded-sm text-brand-gold text-xs hover:bg-brand-gold hover:text-brand-dark transition-all">Trendyol</a>
+                            <a href="https://www.kitapaloku.com/kisi/221566/tolga-ozdogan/" target="_blank" class="px-4 py-2 border border-brand-gold rounded-sm text-brand-gold text-xs hover:bg-brand-gold hover:text-brand-dark transition-all">KitapAlOku</a>
+                            <a href="https://www.nadirkitap.com/kaosun-mimari-insan-tolga-ozdogan-limera-yayinlari-kitap48159940.html" target="_blank" class="px-4 py-2 border border-brand-gold rounded-sm text-brand-gold text-xs hover:bg-brand-gold hover:text-brand-dark transition-all">NadirKitap</a>
+                            <a href="https://www.kitapstore.com/urun/781269/kitap/limera-yayinlari/tolga-ozdogan/kaosun-mimari-insan/" target="_blank" class="px-4 py-2 border border-brand-gold rounded-sm text-brand-gold text-xs hover:bg-brand-gold hover:text-brand-dark transition-all">KitapStore</a>
                         </div>
                     </div>
                 </div>
@@ -189,7 +196,6 @@
         </div>
     </section>
 
-    <!-- Yazar Hakkında Section -->
     <section id="yazar" class="py-24 bg-[#080B12] relative border-t border-brand-gold/10">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -213,7 +219,7 @@
                     
                     <div class="font-serif text-brand-gray text-lg leading-relaxed space-y-6">
                         <p>
-                          1985'te İzmir'de başlayan hikaye, kelimelerin ve çizgilerin kesiştiği noktada şekillendi. Grafik tasarım kökenli eski bir gazeteci olarak, görsel dünyayı edebi bir dille yeniden inşa etme tutkusu her zaman merkezde yer aldı.
+                            1 Nisan 1985'te İzmir'de başlayan hikaye, kelimelerin ve çizgilerin kesiştiği noktada şekillendi. Grafik tasarım kökenli eski bir gazeteci olarak, görsel dünyayı edebi bir dille yeniden inşa etme tutkusu her zaman merkezde yer aldı.
                         </p>
                         <p>
                             Kuantum fiziğinden Antik Roma ve Osmanlı tarihine, kriptolojiden nöroteknolojiye kadar uzanan geniş ve disiplinlerarası ilgi alanları, eserlerin felsefi altyapısını oluşturur. Kurumsal yaşamda kitle psikolojisi ve organizasyonel yapı üzerine edinilen yönetsel tecrübeler, karakterlerin iç dünyasına ve toplumsal olaylara verilen tepkilere doğrudan yansır.
@@ -234,7 +240,6 @@
         </div>
     </section>
 
-    <!-- Düşünce Defteri Section -->
     <section id="dusunce-defteri" class="py-24 bg-brand-dark relative border-t border-brand-gold/10">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             
@@ -286,7 +291,6 @@
         </div>
     </section>
 
-    <!-- İletişim Section -->
     <section id="iletisim" class="py-24 bg-[#080B12] relative border-t border-brand-gold/10">
         <div class="max-w-4xl mx-auto px-6 md:px-12 text-center reveal">
             <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">İletişime Geçin</h2>
@@ -318,7 +322,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-black py-10 border-t border-brand-gold/20">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
             <p class="font-sans text-xs text-brand-gray/60 mb-4 md:mb-0">

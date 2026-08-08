@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tolga Özdoğan | Yazar</title>
+    
+    <title>Tolga Özdoğan | Yazar, Edebiyat ve Felsefe</title>
+    <meta name="description" content="Yazar Tolga Özdoğan'ın resmi web sitesi. Edebiyat, felsefe, araştırma ve düşünce yazıları. Yeni kitap serisi 'Kaosun Mimarı İnsan' ve 'Düzenin Savunucusu İnsan' kurgu evrenini keşfedin.">
+    <meta name="keywords" content="Tolga Özdoğan, yazar, yeni kitap, edebiyat, kitap, yenikitap, felsefe, araştırma, düşünce, kaosun mimarı insan, düzenin savunucusu insan">
+    <meta name="author" content="Tolga Özdoğan">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Sosyal Medya Paylaşım Görünümü İçin) -->
+    <meta property="og:title" content="Tolga Özdoğan | Yazar, Edebiyat ve Felsefe">
+    <meta property="og:description" content="Edebiyat ve felsefenin kesişim noktasında, kaos ve düzen üzerine zihinsel bir araştırma ve düşünce yolculuğu. Yeni kitapları keşfedin.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tolgaozdogan.com">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -39,8 +52,10 @@
             }
         }
     </script>
-    <!-- Three.js -->
+    
+    <!-- Three.js for 3D Background -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
     <style>
         body { background-color: #0B0F19; color: #E2E8F0; overflow-x: hidden; font-family: 'Lora', serif; }
         ::-webkit-scrollbar { width: 8px; }
@@ -92,14 +107,14 @@
         <div id="hero-canvas"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-dark/50 to-brand-dark z-1"></div>
 
-        <!-- Left Banner (Hidden on mobile/tablet) - Boyutu ve Yerleşimi Optimize Edildi -->
+        <!-- Left Banner (Kaosun Mimari Insan) -->
         <div class="hidden xl:block absolute left-[5%] top-1/2 -translate-y-1/2 z-20 w-[150px] 2xl:w-[220px] opacity-0 animate-[fadeIn_2s_ease-out_1s_forwards]">
             <a href="https://www.kitapyurdu.com/kitap/kaosun-mimari-insan/762120.html" target="_blank" class="block transition-transform duration-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] rounded-lg overflow-hidden animate-float-slow">
                 <img src="./Banner-1.png" alt="Kaosun Mimarı İnsan Banner" class="w-full h-auto max-h-[75vh] object-contain rounded-lg border border-brand-gold/30">
             </a>
         </div>
 
-        <!-- Right Banner (Hidden on mobile/tablet) - Boyutu ve Yerleşimi Optimize Edildi -->
+        <!-- Right Banner (Duzenin Savunucusu Insan) -->
         <div class="hidden xl:block absolute right-[5%] top-1/2 -translate-y-1/2 z-20 w-[150px] 2xl:w-[220px] opacity-0 animate-[fadeIn_2s_ease-out_1.5s_forwards]">
             <a href="https://www.kitapyurdu.com/kitap/duzenin-savunucusu-insan/763577.html?manufacturer_id=296396" target="_blank" class="block transition-transform duration-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] rounded-lg overflow-hidden animate-float-delayed">
                 <img src="./Banner-2.png" alt="Düzenin Savunucusu İnsan Banner" class="w-full h-auto max-h-[75vh] object-contain rounded-lg border border-brand-gold/30">
@@ -108,21 +123,22 @@
 
         <div class="relative-z text-center px-6 max-w-4xl mx-auto mt-20">
             <h2 class="font-signature text-3xl md:text-5xl text-brand-gold tracking-wider mb-2 opacity-0 animate-[fadeIn_2s_ease-out_forwards]">Tolga Özdoğan</h2>
-            <h3 class="font-sans text-brand-gray tracking-[0.3em] uppercase text-xs md:text-sm mb-10 opacity-0 animate-[fadeIn_2s_ease-out_0.5s_forwards]">Yazar</h3>
+            <h1 class="font-sans text-brand-gray tracking-[0.3em] uppercase text-xs md:text-sm mb-10 opacity-0 animate-[fadeIn_2s_ease-out_0.5s_forwards]">Yazar & Araştırmacı</h1>
             
-            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 opacity-0 animate-[slideUp_1.5s_ease-out_1s_forwards]">
+            <p class="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 opacity-0 animate-[slideUp_1.5s_ease-out_1s_forwards]">
                 "Düzeni ararken yarattığımız <br class="hidden md:block">
                 <span class="text-gold-gradient italic font-serif font-medium">karmaşanın tam kalbinde</span><br class="hidden md:block">
                 kendi hikayemizi yazıyoruz."
-            </h1>
+            </p>
             
+            <!-- SEO Optimized Subtitle -->
             <p class="font-sans text-brand-gray text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto opacity-0 animate-[fadeIn_2s_ease-out_2s_forwards]">
-                Kaosun mimarisinden, düzenin savunmasına uzanan zihinsel bir yolculuk.
+                Kaosun mimarisinden, düzenin savunmasına uzanan; <strong>felsefe</strong> ve <strong>edebiyat</strong> ekseninde derin bir <strong>araştırma</strong> ve <strong>düşünce</strong> yolculuğu. <strong>Yeni kitap</strong> evrenini keşfedin.
             </p>
             
             <div class="flex flex-wrap gap-4 justify-center">
                 <a href="#eserler" class="inline-block border border-brand-gold text-brand-gold px-10 py-4 rounded-sm font-sans tracking-widest text-sm uppercase hover:bg-brand-gold hover:text-brand-dark transition-all duration-300 opacity-0 animate-[fadeIn_2s_ease-out_2.5s_forwards]">
-                    Kurgu Evrenini Keşfet
+                    Kitapları İncele
                 </a>
             </div>
         </div>
@@ -138,18 +154,18 @@
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             
             <div class="text-center mb-20 reveal">
-                <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Eserler</h2>
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Eserler & Yeni Kitaplar</h2>
                 <div class="w-24 h-px bg-brand-gold mx-auto"></div>
-                <p class="font-serif italic text-brand-gray mt-6 text-lg">Birbirini tamamlayan iki zıt kutup: Kaos ve Düzen.</p>
+                <p class="font-serif italic text-brand-gray mt-6 text-lg">Birbirini tamamlayan iki zıt kutup: Kaos ve Düzen üzerine edebi bir <strong>araştırma</strong>.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                 
-                <!-- Book 1 -->
+                <!-- Book 1: Kaosun Mimari Insan -->
                 <div class="book-card reveal flex flex-col md:flex-row gap-8 items-center lg:items-start group">
                     <div class="w-2/3 md:w-1/2 lg:w-[300px] shrink-0 relative">
                         <div class="book-cover aspect-[2/3] relative overflow-hidden rounded-r-md rounded-l-sm border-l-4 border-gray-900 bg-gray-900 shadow-2xl flex items-center justify-center">
-                            <img src="./mockup1.png" alt="Kaosun Mimarı İnsan" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                            <img src="./mockup1.png" alt="Kaosun Mimarı İnsan Kitap Kapağı" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
                     </div>
                     
@@ -157,7 +173,7 @@
                         <span class="font-sans text-brand-gold text-xs tracking-[0.2em] uppercase mb-2 block">I. Tez</span>
                         <h3 class="font-display text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-brand-gold transition-colors">Kaosun Mimarı İnsan</h3>
                         <p class="font-serif text-brand-gray leading-relaxed mb-6">
-                            Bize dayatılan kalıpları kırıp, kaosun ortasında kendi düzenimizi nasıl inşa ederiz? Ataların yankısı, vicdan sorgulaması ve insanın kendi karanlığıyla yüzleştiği o tekinsiz ama özgürleştirici alan.
+                            Bize dayatılan kalıpları kırıp, kaosun ortasında kendi düzenimizi nasıl inşa ederiz? Ataların yankısı, vicdan sorgulaması ve insanın kendi karanlığıyla yüzleştiği o tekinsiz ama özgürleştirici <strong>felsefe</strong> alanı.
                         </p>
                         
                         <div class="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
@@ -172,11 +188,11 @@
                     </div>
                 </div>
 
-                <!-- Book 2 -->
+                <!-- Book 2: Duzenin Savunucusu Insan -->
                 <div class="book-card reveal flex flex-col md:flex-row-reverse gap-8 items-center lg:items-start group lg:mt-32">
                     <div class="w-2/3 md:w-1/2 lg:w-[300px] shrink-0 relative">
                         <div class="book-cover aspect-[2/3] relative overflow-hidden rounded-r-md rounded-l-sm border-l-4 border-gray-400 bg-gray-200 shadow-2xl flex items-center justify-center">
-                            <img src="./kapak.jpg" alt="Düzenin Savunucusu İnsan" class="w-full h-full object-cover">
+                            <img src="./kapak.jpg" alt="Düzenin Savunucusu İnsan Yeni Kitap" class="w-full h-full object-cover">
                         </div>
                     </div>
                     
@@ -184,8 +200,9 @@
                         <span class="font-sans text-brand-gold text-xs tracking-[0.2em] uppercase mb-2 block">II. Antitez</span>
                         <h3 class="font-display text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-brand-gold transition-colors">Düzenin Savunucusu İnsan</h3>
                         <p class="font-serif text-brand-gray leading-relaxed mb-6">
-                            Kaosun karşısında nizamın, aklın ve kurgulanan evrenin korunması. Dağılmanın ve entropinin karşısında duran zihnin, yeni bir denge arayışı ve sınırları çizen felsefi duruş.
+                            Kaosun karşısında nizamın, aklın ve kurgulanan evrenin korunması. Dağılmanın ve entropinin karşısında duran zihnin, yeni bir denge arayışı ve sınırları çizen entelektüel <strong>düşünce</strong> duruşu.
                         </p>
+                        
                         <div class="mt-6 flex flex-wrap gap-3 justify-center md:justify-end">
                             <p class="w-full text-xs text-brand-gray/60 uppercase tracking-widest mb-2 font-sans text-center md:text-right">Satın Al:</p>
                             <a href="https://www.kitapyurdu.com/kitap/duzenin-savunucusu-insan/763577.html?manufacturer_id=296396" target="_blank" class="px-4 py-2 border border-brand-gold rounded-sm text-brand-gold text-xs hover:bg-brand-gold hover:text-brand-dark transition-all">Kitapyurdu</a>
@@ -205,25 +222,25 @@
                     <div class="flex flex-col gap-6 relative">
                         <div class="relative">
                             <div class="absolute -inset-2 border border-brand-gold/30 rounded-sm transform translate-x-2 translate-y-2"></div>
-                            <img src="./Tolga1.png" alt="Tolga Özdoğan - Yazar" class="w-full h-auto rounded-sm shadow-2xl relative z-10 object-cover">
+                            <img src="./Tolga1.png" alt="Tolga Özdoğan - Yazar ve Araştırmacı" class="w-full h-auto rounded-sm shadow-2xl relative z-10 object-cover">
                         </div>
                         <div class="grid grid-cols-2 gap-4">
-                             <img src="./5.png" alt="Tolga Özdoğan Çalışırken" class="w-full h-auto rounded-sm shadow-lg self-start object-cover">
-                             <img src="./WhatsApp%20Image%202026-07-21%20at%2011.33.35.jpeg" alt="Limera Raflarında" class="w-full h-auto rounded-sm shadow-lg self-start object-cover">
+                             <img src="./5.png" alt="Yazar Tolga Özdoğan Çalışırken" class="w-full h-auto rounded-sm shadow-lg self-start object-cover">
+                             <img src="./WhatsApp%20Image%202026-07-21%20at%2011.33.35.jpeg" alt="Limera Yayınları Yeni Kitap" class="w-full h-auto rounded-sm shadow-lg self-start object-cover">
                         </div>
                     </div>
                 </div>
 
                 <div class="lg:col-span-7 lg:pl-10 reveal">
                     <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-2">Tolga Özdoğan</h2>
-                    <p class="font-sans text-brand-gold tracking-widest text-sm mb-8 uppercase">Yazar</p>
+                    <p class="font-sans text-brand-gold tracking-widest text-sm mb-8 uppercase">Yazar / Edebiyatçı</p>
                     
                     <div class="font-serif text-brand-gray text-lg leading-relaxed space-y-6">
                         <p>
-                            1 Nisan 1985'te İzmir'de başlayan hikaye, kelimelerin ve çizgilerin kesiştiği noktada şekillendi. Grafik tasarım kökenli eski bir gazeteci olarak, görsel dünyayı edebi bir dille yeniden inşa etme tutkusu her zaman merkezde yer aldı.
+                            1 Nisan 1985'te İzmir'de başlayan hikaye, kelimelerin ve çizgilerin kesiştiği noktada şekillendi. Grafik tasarım kökenli eski bir gazeteci ve <strong>yazar</strong> olarak, görsel dünyayı <strong>edebiyat</strong> diliyle yeniden inşa etme tutkusu her zaman merkezde yer aldı.
                         </p>
                         <p>
-                            Kuantum fiziğinden Antik Roma ve Osmanlı tarihine, kriptolojiden nöroteknolojiye kadar uzanan geniş ve disiplinlerarası ilgi alanları, eserlerin felsefi altyapısını oluşturur. Kurumsal yaşamda kitle psikolojisi ve organizasyonel yapı üzerine edinilen yönetsel tecrübeler, karakterlerin iç dünyasına ve toplumsal olaylara verilen tepkilere doğrudan yansır.
+                            Kuantum fiziğinden Antik Roma ve Osmanlı tarihine, kriptolojiden nöroteknolojiye kadar uzanan geniş ve disiplinlerarası ilgi alanları, yazılan <strong>kitap</strong> ve eserlerin <strong>felsefe</strong> altyapısını oluşturur. Kurumsal yaşamda kitle psikolojisi ve organizasyonel yapı üzerine edinilen yönetsel tecrübeler, <strong>araştırma</strong> süreçlerine, karakterlerin iç dünyasına ve toplumsal olaylara verilen tepkilere doğrudan yansır.
                         </p>
                     </div>
 
@@ -247,7 +264,7 @@
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
                 <div>
                     <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Düşünce Defteri</h2>
-                    <p class="font-serif italic text-brand-gray text-lg">Araştırmalar, makaleler ve kurgunun perde arkası.</p>
+                    <p class="font-serif italic text-brand-gray text-lg"><strong>Edebiyat</strong>, felsefi <strong>araştırma</strong> makaleleri ve kurgunun perde arkası.</p>
                 </div>
                 <a href="dusunce-defteri.html" class="hidden md:inline-block font-sans text-sm text-brand-gold uppercase tracking-wider hover:text-white transition-colors mt-6 md:mt-0">Tüm Yazıları Gör <i class="fas fa-arrow-right ml-2"></i></a>
             </div>
@@ -266,7 +283,7 @@
 
                 <article class="bg-[#111724] border border-brand-gray/10 hover:border-brand-gold/50 transition-all duration-300 p-8 flex flex-col justify-between h-full reveal rounded-sm group cursor-pointer lg:mt-8" onclick="window.location.href='dusunce-defteri.html'">
                     <div>
-                        <span class="font-sans text-brand-gold text-xs tracking-widest uppercase mb-4 block">Tarih</span>
+                        <span class="font-sans text-brand-gold text-xs tracking-widest uppercase mb-4 block">Tarih & Araştırma</span>
                         <h3 class="font-display text-xl text-white font-semibold mb-4 group-hover:text-brand-gold transition-colors line-clamp-2">Roma'nın Çöküşünden Alınacak Yönetsel Dersler</h3>
                         <p class="font-serif text-brand-gray text-sm line-clamp-3 mb-6">
                             Büyümenin getirdiği hantallık ve merkezi otoritenin zayıflaması. Modern organizasyonlar tarihin hatalarını tekrarlamak zorunda mı?
@@ -276,10 +293,10 @@
 
                 <article class="bg-[#111724] border border-brand-gray/10 hover:border-brand-gold/50 transition-all duration-300 p-8 flex flex-col justify-between h-full reveal rounded-sm group cursor-pointer lg:mt-16" onclick="window.location.href='dusunce-defteri.html'">
                     <div>
-                        <span class="font-sans text-brand-gold text-xs tracking-widest uppercase mb-4 block">Yazım Süreci</span>
+                        <span class="font-sans text-brand-gold text-xs tracking-widest uppercase mb-4 block">Edebiyat Süreci</span>
                         <h3 class="font-display text-xl text-white font-semibold mb-4 group-hover:text-brand-gold transition-colors line-clamp-2">Karakter Yaratımında Kuantum Olasılıkları</h3>
                         <p class="font-serif text-brand-gray text-sm line-clamp-3 mb-6">
-                            Bir karakterin yapabileceği tüm seçimler bir evrende aynı anda var olabilir mi? Karar anlarında yazarın zihnindeki çöken dalga fonksiyonu.
+                            Bir karakterin yapabileceği tüm seçimler bir evrende aynı anda var olabilir mi? Karar anlarında bir yazarın zihnindeki çöken dalga fonksiyonu.
                         </p>
                     </div>
                 </article>
@@ -287,7 +304,7 @@
             </div>
             
             <div class="mt-10 text-center md:hidden">
-                <a href="dusunce-defteri.html" class="inline-block font-sans text-sm text-brand-gold uppercase tracking-wider border border-brand-gold px-6 py-2 rounded-sm hover:bg-brand-gold hover:text-brand-dark transition-colors">Tüm Yazılar</a>
+                <a href="dusunce-defteri.html" class="inline-block font-sans text-sm text-brand-gold uppercase tracking-wider border border-brand-gold px-6 py-2 rounded-sm hover:bg-brand-gold hover:text-brand-dark transition-colors">Tüm Düşünce Yazıları</a>
             </div>
         </div>
     </section>
@@ -296,7 +313,7 @@
         <div class="max-w-4xl mx-auto px-6 md:px-12 text-center reveal">
             <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">İletişime Geçin</h2>
             <p class="font-serif text-brand-gray mb-12 max-w-2xl mx-auto">
-                Yayın hakları, röportaj talepleri veya sadece düşünce dünyasına dair bir fikir paylaşmak için form aracılığıyla ulaşabilirsiniz.
+                Yeni kitap yayın hakları, edebiyat üzerine röportaj talepleri veya sadece felsefi düşünce dünyasına dair bir fikir paylaşmak için form aracılığıyla ulaşabilirsiniz.
             </p>
 
             <form action="https://formspree.io/f/xbdnajpj" method="POST" class="space-y-6 text-left">
@@ -312,7 +329,7 @@
                 </div>
                 <div>
                     <label for="message" class="block font-sans text-xs text-brand-gray uppercase tracking-widest mb-2">Mesajınız</label>
-                    <textarea id="message" name="mesaj" rows="4" required class="w-full bg-transparent border-b border-brand-gray/30 p-3 text-white focus:outline-none focus:border-brand-gold transition-colors resize-none placeholder-gray-700" placeholder="Fikirlerinizi buraya yazın..."></textarea>
+                    <textarea id="message" name="mesaj" rows="4" required class="w-full bg-transparent border-b border-brand-gray/30 p-3 text-white focus:outline-none focus:border-brand-gold transition-colors resize-none placeholder-gray-700" placeholder="Edebiyat, kitap veya düşüncelerinizi buraya yazın..."></textarea>
                 </div>
                 <div class="text-center pt-4">
                     <button type="submit" class="border border-brand-gold text-brand-gold px-12 py-3 rounded-sm font-sans tracking-widest text-sm uppercase hover:bg-brand-gold hover:text-brand-dark transition-all duration-300">

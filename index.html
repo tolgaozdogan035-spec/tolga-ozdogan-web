@@ -6,15 +6,15 @@
     <link rel="canonical" href="https://tolgaozdogan.com/" />
     
     <title>Tolga Özdoğan | Yazar, Edebiyat ve Felsefe</title>
-    <meta name="description" content="Yazar Tolga Özdoğan'ın resmi web sitesi. Edebiyat, felsefe, araştırma ve düşünce yazıları. Yeni kitap serisi 'Kaosun Mimarı İnsan' ve 'Düzenin Savunucusu İnsan' kurgu evrenini keşfedin.">
-    <meta name="keywords" content="Tolga Özdoğan, yazar, yeni kitap, edebiyat, kitap, yenikitap, felsefe, araştırma, düşünce, kaosun mimarı insan, düzenin savunucusu insan">
+    <meta name="description" content="Yazar Tolga Özdoğan'ın resmi web sitesi. Edebiyat, felsefe, araştırma ve düşünce yazıları. Yeni kitap serisi 'Kaosun Mimarı İnsan', 'Düzenin Savunucusu İnsan' ve yeni romanı 'Leyla - Yasak Mevsim'i keşfedin.">
+    <meta name="keywords" content="Tolga Özdoğan, yazar, yeni kitap, edebiyat, kitap, yenikitap, felsefe, araştırma, düşünce, kaosun mimarı insan, düzenin savunucusu insan, leyla yasak mevsim">
     <meta name="author" content="Tolga Özdoğan">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="x9uqKI7kXm2G4yX8TBXE4hFunQjimEHMuM55sq8A9A4" />
     
     <!-- Open Graph (Sosyal Medya Paylaşım Görünümü İçin) -->
     <meta property="og:title" content="Tolga Özdoğan | Yazar, Edebiyat ve Felsefe">
-    <meta property="og:description" content="Edebiyat ve felsefenin kesişim noktasında, kaos ve düzen üzerine zihinsel bir araştırma ve düşünce yolculuğu. Yeni kitapları keşfedin.">
+    <meta property="og:description" content="Edebiyat ve felsefenin kesişim noktasında, kaos ve düzen üzerine zihinsel bir araştırma ve düşünce yolculuğu. Yeni çıkan 'Leyla - Yasak Mevsim' romanını keşfedin.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tolgaozdogan.com">
 
@@ -79,6 +79,20 @@
 </head>
 <body class="antialiased selection:bg-brand-gold selection:text-brand-dark">
 
+    <!-- Leyla Yasak Mevsim Popup -->
+    <div id="leyla-popup" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-500" onclick="closePopup(event)">
+        <div class="relative w-[90%] max-w-[400px] mx-auto transform scale-95 transition-transform duration-500" id="popup-content" onclick="event.stopPropagation()">
+            <!-- Close Button -->
+            <button onclick="closePopup(event)" class="absolute -top-12 right-0 text-white hover:text-brand-gold text-3xl focus:outline-none transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+            <!-- Popup Image with Link -->
+            <a href="https://www.kitapyurdu.com/kitap/leyla-yasak-mevsim/764961.html?manufacturer_id=296396" target="_blank" class="block rounded-lg overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.4)] hover:scale-105 transition-transform duration-500">
+                <img src="./Banner-popup.jpg" alt="Leyla Yasak Mevsim Satışa Açıldı" class="w-full max-h-[85vh] object-contain rounded-lg">
+            </a>
+        </div>
+    </div>
+
     <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-brand-dark/80 border-b border-brand-gold/10 py-4" id="navbar">
         <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
             <a href="#" class="font-signature text-3xl md:text-4xl text-brand-gold hover:text-white transition-colors tracking-wide">Tolga Özdoğan</a>
@@ -127,10 +141,10 @@
 
         <div class="relative-z text-center px-6 max-w-4xl mx-auto mt-10">
             
-            <!-- Leyla Yasak Mevsim Top Banner -->
+            <!-- Leyla Yasak Mevsim Top Banner - DIRECT SALES LINK -->
             <div class="mb-8 flex justify-center opacity-0 animate-[fadeIn_2s_ease-out_forwards]">
-                <a href="#leyla-roman" class="block transition-transform duration-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] rounded-lg overflow-hidden w-full max-w-[600px]">
-                    <img src="./banner-Leyla.png" alt="Leyla Yasak Mevsim - Çok Yakında" class="w-full h-auto object-cover rounded-lg border border-brand-gold/30">
+                <a href="https://www.kitapyurdu.com/kitap/leyla-yasak-mevsim/764961.html?manufacturer_id=296396" target="_blank" class="block transition-transform duration-500 hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] rounded-lg overflow-hidden w-full max-w-[600px]">
+                    <img src="./banner-Leyla.png" alt="Leyla Yasak Mevsim - Şimdi Satışta" class="w-full h-auto object-cover rounded-lg border border-brand-gold/30">
                 </a>
             </div>
 
@@ -143,7 +157,6 @@
                 kendi hikayemizi yazıyoruz."
             </p>
             
-            <!-- SEO Optimized Subtitle -->
             <p class="font-sans text-brand-gray text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto opacity-0 animate-[fadeIn_2s_ease-out_2s_forwards]">
                 Kaosun mimarisinden, düzenin savunmasına uzanan; <strong>felsefe</strong> ve <strong>edebiyat</strong> ekseninde derin bir <strong>araştırma</strong> ve <strong>düşünce</strong> yolculuğu. <strong>Yeni kitap</strong> evrenini keşfedin.
             </p>
@@ -165,12 +178,66 @@
     <section id="eserler" class="py-24 relative bg-brand-dark">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             
-            <div class="text-center mb-20 reveal">
+            <div class="text-center mb-16 reveal">
                 <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Eserler & Yeni Kitaplar</h2>
                 <div class="w-24 h-px bg-brand-gold mx-auto"></div>
-                <p class="font-serif italic text-brand-gray mt-6 text-lg">Birbirini tamamlayan iki zıt kutup: Kaos ve Düzen üzerine edebi bir <strong>araştırma</strong>.</p>
+                <p class="font-serif italic text-brand-gray mt-6 text-lg">Romanlar ve felsefi kurgular üzerine edebi bir <strong>araştırma</strong>.</p>
             </div>
 
+            <!-- Leyla Yasak Mevsim Highlight Section -->
+            <div id="leyla-roman" class="mb-24 md:mb-32 reveal scroll-mt-28">
+                <div class="relative rounded-lg overflow-hidden border border-brand-gold/40 shadow-[0_0_50px_rgba(212,175,55,0.15)] bg-[#111724]">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-brand-dark via-brand-dark/90 to-transparent z-0 hidden md:block"></div>
+                    <div class="absolute top-0 left-0 w-full h-full bg-brand-dark/80 z-0 md:hidden"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-12 relative z-10">
+                        <div class="md:col-span-7 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+                            <div class="inline-flex items-center gap-3 mb-4">
+                                <span class="bg-brand-gold text-brand-dark font-bold font-sans text-[10px] tracking-widest uppercase px-3 py-1 rounded-sm animate-pulse">Şimdi Satışta</span>
+                                <span class="text-brand-gold font-sans text-xs tracking-widest uppercase border border-brand-gold/30 px-3 py-1 rounded-sm">Yılın Romanı</span>
+                            </div>
+                            
+                            <h3 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Leyla<br><span class="text-brand-gold text-3xl md:text-4xl lg:text-5xl">Yasak Mevsim</span></h3>
+                            
+                            <p class="font-serif text-xl md:text-2xl text-brand-gray italic mb-6 border-l-2 border-brand-gold pl-4">
+                                "Bazen en büyük cesaret, her şeyi geride bırakıp kendi hikâyeni yazmaktır."
+                            </p>
+                            
+                            <div class="font-sans text-brand-gray/90 text-sm md:text-base leading-relaxed space-y-4 mb-8">
+                                <p>
+                                    1962'nin nefessiz bırakan gri Ankara'sından İzmir'in iyot kokulu sokaklarına uzanan bir kaçış... 
+                                </p>
+                                <p>
+                                    Kendisine dayatılan sınırları tek bir bavulla geride bırakan genç öğretmen Leyla, hayatında ilk kez gördüğü denizin kıyısında sadece özgürlüğü değil, gözü pek gazeteci Adnan'ı da bulacaktır. Kilitli kapılar ardında susanların sesini duyurmak için tehlikeye atılan iki kalp; aşkın, direnişin ve korkuya rağmen ayakta kalmanın destanını yazacak.
+                                </p>
+                                <p class="text-brand-gold font-medium pt-2">
+                                    Yılın en iddialı romanı şimdi raflarda ve çevrimiçi mağazalarda.
+                                </p>
+                            </div>
+
+                            <!-- Satın Al Butonu -->
+                            <div>
+                                <a href="https://www.kitapyurdu.com/kitap/leyla-yasak-mevsim/764961.html?manufacturer_id=296396" target="_blank" class="inline-block bg-brand-gold text-brand-dark px-8 py-3 rounded-sm font-sans tracking-widest text-sm uppercase font-semibold hover:bg-white hover:text-brand-dark transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:shadow-[0_0_25px_rgba(255,255,255,0.6)]">
+                                    <i class="fas fa-shopping-cart mr-2"></i> Satın Al: Kitapyurdu
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Sağ Taraf Kitap Kapağı -->
+                        <div class="md:col-span-5 relative flex items-center justify-center p-8 md:p-0">
+                            <div class="absolute inset-0 bg-brand-gold/20 blur-3xl rounded-full scale-75 opacity-50"></div>
+                            
+                            <a href="https://www.kitapyurdu.com/kitap/leyla-yasak-mevsim/764961.html?manufacturer_id=296396" target="_blank" class="book-card w-[200px] md:w-[280px] lg:w-[320px] mx-auto md:mr-12 lg:mr-20 z-10 relative transform hover:scale-105 transition-transform duration-700 block cursor-pointer">
+                                <div class="book-cover aspect-[2/3] relative overflow-hidden rounded-r-md rounded-l-sm border-l-4 border-[#3a3a3a] shadow-2xl">
+                                    <img src="./Leylaon.png" alt="Leyla Yasak Mevsim Romanı Kapak" class="w-full h-full object-cover">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Felsefi Seri (Kaos ve Düzen) -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                 
                 <!-- Book 1: Kaosun Mimari Insan -->
@@ -223,53 +290,6 @@
                 </div>
 
             </div>
-
-            <!-- Leyla Yasak Mevsim Highlight Section -->
-            <div id="leyla-roman" class="mt-24 md:mt-32 reveal scroll-mt-28">
-                <div class="relative rounded-lg overflow-hidden border border-brand-gold/40 shadow-[0_0_50px_rgba(212,175,55,0.15)] bg-[#111724]">
-                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-brand-dark via-brand-dark/90 to-transparent z-0 hidden md:block"></div>
-                    <div class="absolute top-0 left-0 w-full h-full bg-brand-dark/80 z-0 md:hidden"></div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-12 relative z-10">
-                        <div class="md:col-span-7 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-                            <div class="inline-flex items-center gap-3 mb-4">
-                                <span class="bg-brand-gold text-brand-dark font-bold font-sans text-[10px] tracking-widest uppercase px-3 py-1 rounded-sm">Çok Yakında Satışta</span>
-                                <span class="text-brand-gold font-sans text-xs tracking-widest uppercase border border-brand-gold/30 px-3 py-1 rounded-sm">Yılın Romanı</span>
-                            </div>
-                            
-                            <h3 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Leyla<br><span class="text-brand-gold text-3xl md:text-4xl lg:text-5xl">Yasak Mevsim</span></h3>
-                            
-                            <p class="font-serif text-xl md:text-2xl text-brand-gray italic mb-6 border-l-2 border-brand-gold pl-4">
-                                "Bazen en büyük cesaret, her şeyi geride bırakıp kendi hikâyeni yazmaktır."
-                            </p>
-                            
-                            <div class="font-sans text-brand-gray/90 text-sm md:text-base leading-relaxed space-y-4 mb-8">
-                                <p>
-                                    1962'nin nefessiz bırakan gri Ankara'sından İzmir'in iyot kokulu sokaklarına uzanan bir kaçış... 
-                                </p>
-                                <p>
-                                    Kendisine dayatılan sınırları tek bir bavulla geride bırakan genç öğretmen Leyla, hayatında ilk kez gördüğü denizin kıyısında sadece özgürlüğü değil, gözü pek gazeteci Adnan'ı da bulacaktır. Kilitli kapılar ardında susanların sesini duyurmak için tehlikeye atılan iki kalp; aşkın, direnişin ve korkuya rağmen ayakta kalmanın destanını yazacak.
-                                </p>
-                                <p class="text-brand-gold font-medium pt-2">
-                                    Yılın en iddialı romanı olmaya aday bu sarsıcı hikâyeye hazır olun.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="md:col-span-5 relative flex items-center justify-center p-8 md:p-0">
-                            <!-- Background blur effect behind book -->
-                            <div class="absolute inset-0 bg-brand-gold/20 blur-3xl rounded-full scale-75 opacity-50"></div>
-                            
-                            <div class="book-card w-[200px] md:w-[280px] lg:w-[320px] mx-auto md:mr-12 lg:mr-20 z-10 relative transform hover:scale-105 transition-transform duration-700">
-                                <div class="book-cover aspect-[2/3] relative overflow-hidden rounded-r-md rounded-l-sm border-l-4 border-[#3a3a3a] shadow-2xl">
-                                    <img src="./Leylaon.png" alt="Leyla Yasak Mevsim Romanı Kapak" class="w-full h-full object-cover">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -415,10 +435,44 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+        
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
+
+        // Popup Kapatma Fonksiyonu
+        function closePopup(e) {
+            if (e) e.preventDefault();
+            const popup = document.getElementById('leyla-popup');
+            const content = document.getElementById('popup-content');
+            
+            popup.classList.remove('opacity-100');
+            content.classList.remove('scale-100');
+            
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+            }, 500); // Animasyonun bitmesini bekler
+        }
+
+        // Sayfa yüklendiğinde Popup'ı açma
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const popup = document.getElementById('leyla-popup');
+                const content = document.getElementById('popup-content');
+                
+                popup.classList.remove('hidden');
+                popup.classList.add('flex');
+                
+                // Animasyonun tetiklenmesi için minik bir gecikme
+                requestAnimationFrame(() => {
+                    popup.classList.add('opacity-100');
+                    content.classList.add('scale-100');
+                });
+            }, 1500); // 1.5 saniye sonra açılır
+        });
+
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -429,6 +483,7 @@
                 nav.classList.add('bg-brand-dark/80');
             }
         });
+
         const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

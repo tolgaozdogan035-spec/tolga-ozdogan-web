@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edebiyatın Aynasında İnsan ve Kelimelerin Sessiz Gücü | Tolga Özdoğan</title>
+    
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#0B0F19',
+                        'brand-gold': '#D4AF37',
+                        'brand-gray': '#A0AAB2',
+                    },
+                    fontFamily: {
+                        'display': ['Cinzel', 'serif'],
+                        'serif': ['Lora', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'signature': ['Alex Brush', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0B0F19; color: #E2E8F0; font-family: 'Lora', serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0F19; }
+        ::-webkit-scrollbar-thumb { background: #2A3650; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+        ::selection { background: #D4AF37; color: #0B0F19; }
+        .article-content p { margin-bottom: 1.5rem; line-height: 1.8; }
+        .article-content h3 { font-family: 'Cinzel', serif; font-size: 1.5rem; color: #fff; margin-top: 3rem; margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-brand-dark/95 border-b border-brand-gold/10 py-4 shadow-lg" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="index.html" class="font-signature text-3xl md:text-4xl text-brand-gold hover:text-white transition-colors tracking-wide">Tolga Özdoğan</a>
+            
+            <div class="hidden lg:flex space-x-6 font-sans text-xs tracking-wide items-center">
+                <a href="index.html#eserler" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Eserler</a>
+                <a href="index.html#yazar" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Yazar Hakkında</a>
+                <a href="kose-yazilari.html" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Köşe Yazıları <i class="fas fa-undo-alt ml-1"></i></a>
+            </div>
+
+            <button class="lg:hidden text-brand-gold focus:outline-none" onclick="history.back()">
+                <i class="fas fa-arrow-left text-xl"></i> Geri Dön
+            </button>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24 bg-[#0B0F19] min-h-screen">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Sol Bölüm: Yazar Profili -->
+                <aside class="lg:col-span-4 order-2 lg:order-1">
+                    <div class="sticky top-32 bg-[#111724] border border-brand-gray/10 p-6 rounded-lg text-center shadow-2xl">
+                        <!-- Yazar Fotoğrafı -->
+                        <div class="relative w-48 h-48 mx-auto mb-6">
+                            <div class="absolute inset-0 rounded-full border-2 border-brand-gold/30 transform -translate-x-2 -translate-y-2"></div>
+                            <img src="./Tolga 2.png" alt="Yazar Tolga Özdoğan" class="w-full h-full object-cover rounded-full border-2 border-[#111724] relative z-10 shadow-lg">
+                        </div>
+                        
+                        <!-- Yazar İsim ve Unvan -->
+                        <h3 class="font-display text-2xl font-bold text-white mb-2">Tolga Özdoğan</h3>
+                        <p class="font-sans text-brand-gold text-xs tracking-[0.2em] uppercase mb-1">Yazar</p>
+                                                
+                        <!-- Kısa Bio -->
+                        <p class="font-serif text-brand-gray text-sm leading-relaxed mb-6 italic">
+                            "Kelimelerle dünyayı yeniden kurmak, insanı en çok da kendi labirentlerinde özgürleştiren tek yoldur."
+                        </p>
+
+                        <!-- Sosyal Linkler -->
+                        <div class="flex justify-center gap-4">
+                            <a href="https://www.instagram.com/tolgaozdogan35?igsh=MWt1MHc5eGxwa285bQ==" target="_blank" class="w-10 h-10 rounded-full border border-brand-gray/30 flex items-center justify-center text-brand-gray hover:text-brand-dark hover:bg-brand-gold hover:border-brand-gold transition-all duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/tolgaözdoğan" target="_blank" class="w-10 h-10 rounded-full border border-brand-gray/30 flex items-center justify-center text-brand-gray hover:text-brand-dark hover:bg-brand-gold hover:border-brand-gold transition-all duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://1000kitap.com/yazar/tolga-ozdogan" target="_blank" class="w-10 h-10 rounded-full border border-brand-gray/30 flex items-center justify-center text-brand-gray hover:text-brand-dark hover:bg-brand-gold hover:border-brand-gold transition-all duration-300">
+                                <i class="fas fa-book-open"></i>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Sağ Bölüm: Yazı İçeriği -->
+                <article class="lg:col-span-8 order-1 lg:order-2">
+                    
+                    <!-- Yazı Başlığı ve Bilgiler -->
+                    <header class="mb-12 text-center md:text-left border-b border-brand-gray/10 pb-8">
+                        <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
+                            <span class="text-brand-gold font-sans text-xs tracking-widest uppercase border border-brand-gold/50 px-3 py-1 rounded-sm">Edebiyat & Felsefe</span>
+                        </div>
+                        <h1 class="font-display text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Edebiyatın Aynasında İnsan ve Kelimelerin Sessiz Gücü</h1>
+                        <div class="flex items-center justify-center md:justify-start gap-4 text-brand-gray font-sans text-sm">
+                            <span><i class="far fa-calendar-alt mr-2"></i>23 Ağustos 2026</span>
+                            <span>|</span>
+                            <span><i class="far fa-clock mr-2"></i>Okuma süresi: 3 dk</span>
+                        </div>
+                    </header>
+
+                    <!-- Yazı Metni -->
+                    <div class="article-content font-serif text-brand-gray/90 text-lg md:text-xl text-justify">
+                        
+                        <p>Yazmak, insanın içindeki o bitmek bilmeyen kaosu anlamlandırma ve bir düzene sokma çabasıdır belki de. İnsan, doğası gereği hem var olan kaosun mimarı hem de kurmaya çalıştığı düzenin en ateşli savunucusudur. Bu karmaşanın içinde kaybolmamak, gürültünün arasında kendi sesimizi duyabilmek için hep kelimelere sığınırız.</p>
+                        
+                        <p>Edebiyat, yüzyıllardır bu sığınağın en sağlam kapısı oldu. Dostoyevski’nin karanlık sokaklarında vicdan muhasebesi yaparken veya Márquez’in o büyülü, bitmek bilmeyen yüzyıllık yalnızlığında kaybolurken aslında hep kendi içimizdeki o tanıdık yankıyı aradık.</p>
+                        
+                        <p>Bir yazar olarak, kelimelerle kurduğum bu bağ her yeni hikayede beni başka bir derinliğe çekiyor. Kurmaca bir dünya yaratmak, sadece karakterlere isim vermek değil; onların acılarını, sessizliklerini ve çıkmazlarını kendi omuzlarında hissetmektir. Son zamanlarda bu ağırlığı ve yaratım sürecinin o tarifsiz hüznünü yeni kitabım <em>Leyla - Yasak Mevsim</em> ile en derinden yaşadım.</p>
+                        
+                        <h3>Bir "Yasak Mevsim"in Ortasında Leyla</h3>
+                        
+                        <p>Leyla, sadece bir kağıt üzerindeki bir karakter değil; zamanın, mekanın ve kendi doğrularıyla hayatın dayatmaları arasına sıkışmış bir ruh hali. Kitabı kaleme alırken, Leyla'nın iç dünyasına yaptığım yolculuk bana aşkın, hüznün ve kabullenişin sınırlarını yeniden sorgulattı. Bazen hayat, bize kendi takvimini dayatır ve biz hiç beklemediğimiz bir anda o "yasak mevsim"in tam ortasında buluruz kendimizi.</p>
+                        
+                        <p>Hikayenin ruhunu ve Leyla'nın sessiz direnişini, kitabın sayfaları arasında şu satırlarla dile getirmeye çalıştım:</p>
+                        
+                        <blockquote class="my-10 border-l-4 border-brand-gold bg-[#111724] p-6 md:p-8 rounded-r-lg shadow-lg">
+                            <p class="text-xl md:text-2xl text-white italic font-light !mb-0">
+                                "Bana hep ne yapmam gerektiği öğretildi. Nasıl oturulur, nasıl konuşulur, nasıl bir kız, nasıl bir gelin, nasıl bir kadın olunur. Hiç kimse bana ne istediğimi sormadı. Sonunda ben de unuttum sormayı."
+                            </p>
+                        </blockquote>
+                        
+                        <p><em>Leyla - Yasak Mevsim</em>, sadece bir kadının hikayesi değil; aslında çoğumuzun içinden geçtiği, dışarıdan bakıldığında sıradan görünen ama içinde fırtınalar kopan o dönüm noktalarının bir yansıması. İnsanın kendiyle, toplumla ve yasaklanan duygularıyla olan mücadelesi.</p>
+                        
+                        <h3>Kelimelerin Buluşma Noktası</h3>
+                        
+                        <p>Yazılan her kitap, ancak okuruyla buluştuğunda, sizin dünyanızda bir yer edindiğinde gerçek anlamda tamamlanır. Leyla'nın hikayesinin sizin dünyanızda nasıl yankı bulacağını, hangi anılarınıza veya duygularınıza dokunacağını inanın büyük bir heyecanla bekliyorum.</p>
+                        
+                        <p>Edebiyatın o birleştirici gücüyle yüz yüze gelmek, hikayeleri ve kelimeleri karşılıklı paylaşmak için Eylül ayında İzmir'de, lansman ve imza günümüzde buluşmak üzere. O güne dek, kelimelerin ve iyi edebiyatın aydınlığından ayrılmamanız dileğiyle...</p>
+                        
+                        <p class="font-signature text-3xl text-brand-gold mt-12 mb-4">Sevgiyle kalın.</p>
+                        
+                    </div>
+                    
+                    <!-- Yazı Sonu Paylaşım ve Yönlendirme -->
+                    <div class="mt-16 pt-8 border-t border-brand-gray/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                        <a href="kose-yazilari.html" class="text-brand-gray hover:text-brand-gold transition-colors font-sans text-sm uppercase tracking-wider">
+                            <i class="fas fa-arrow-left mr-2"></i> Tüm Yazılara Dön
+                        </a>
+                        <div class="flex gap-4">
+                            <span class="text-brand-gray font-sans text-sm tracking-widest uppercase">Paylaş:</span>
+                            <a href="#" class="text-brand-gray hover:text-brand-gold transition-colors"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-brand-gray hover:text-brand-gold transition-colors"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-brand-gray hover:text-brand-gold transition-colors"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black py-10 border-t border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col justify-center items-center">
+            <p class="font-sans text-xs text-brand-gray/60 mb-2">
+                &copy; <span id="year"></span> Tolga Özdoğan. Tüm hakları saklıdır.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

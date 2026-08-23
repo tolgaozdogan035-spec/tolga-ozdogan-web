@@ -1,0 +1,42 @@
+name: Otomatik Kose Yazisi Yayini
+
+on:
+  schedule:
+    # Pazartesi, Çarşamba, Cuma, Pazar - Türkiye saatiyle 14:15 (UTC 11:15)
+    - cron: '15 11 * * 0,1,3,5'
+  workflow_dispatch: # İsterseniz GitHub panelinden butona basarak da anında çalıştırabilirsiniz
+
+jobs:
+  auto-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Repoyu Klonla
+        uses: actions/checkout@v4
+
+      - name: Python Kurulumu
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Google Drive'dan Yeni Yazıyı İndir
+        run: |
+          curl -L -o yeni_yazi.json "https://drive.usercontent.google.com/download?id=13N7My27i-Q_G2LzrEEh37T45ssCoIuRS&export=download"
+
+      - name: Yazıyı Yayınla ve Sayfaları Güncelle
+        run: |
+          python scripts/publish_article.py --json_file yeni_yazi.json
+
+      - name: Değişiklikleri Commit ve Push Et
+        run: |
+          git config --global user.name "Tolga Özdoğan (Otomasyon)"
+          git config --global user.email "tolgaozdogan035@gmail.com"
+          if [[ -n $(git status -s) ]]; then
+            git add kose-yazilari.html yazi-*.html
+            git commit -m "Otomatik köşe yazısı yayını"
+            git push origin main
+            echo "Yeni yazı başarıyla yayınlandı."
+          else
+            echo "Yeni yazı bulunamadı veya yazı zaten yayında."
+          fi

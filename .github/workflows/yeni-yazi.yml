@@ -22,7 +22,7 @@ jobs:
 
       - name: Google Drive'dan Yeni Yazıyı İndir
         run: |
-          curl -L -o yeni_yazi.json "https://drive.usercontent.google.com/download?id=13N7My27i-Q_G2LzrEEh37T45ssCoIuRS&export=download"
+          curl -L -o yeni_yazi.json "https://drive.usercontent.google.com/download?id=1kCSYwg7kMJ02dteYKvPRjS6G6Q08IYgY&export=download"
 
       - name: Yazıyı Yayınla ve Sayfaları Güncelle
         run: |

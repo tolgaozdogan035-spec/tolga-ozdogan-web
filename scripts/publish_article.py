@@ -33,6 +33,16 @@ def generate_article_page(title: str, slug: str, date_str: str, read_time: str, 
     return f"""<!DOCTYPE html>
 <html lang="tr">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DRWFNH55J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2DRWFNH55J');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} | Tolga Özdoğan</title>
@@ -213,9 +223,8 @@ def update_kose_yazilari_list(title: str, slug: str, date_str: str, read_time: s
 
     new_file_name = f"yazi-{slug}.html"
     
-    # Yazı zaten listede var mı kontrolü
     if new_file_name in html_content:
-        print(f"Bilgi: '{new_file_name}' zaten 'kose-yazilari.html' listesinde mevcut.")
+        print(f"Bilgi: '{new_file_name}' zaten listede mevcut.")
         return
 
     card_html = f"""
@@ -291,7 +300,6 @@ def main():
 
     article_filename = f"yazi-{slug}.html"
     
-    # 1. Eğer dosya zaten varsa tekrar oluşturma
     if os.path.exists(article_filename):
         print(f"'{article_filename}' zaten mevcut, atlanıyor.")
     else:
@@ -309,7 +317,6 @@ def main():
             f.write(new_article_page)
         print(f"'{article_filename}' oluşturuldu.")
 
-    # 2. kose-yazilari.html dosyasını güncelle
     first_paragraph = [p.strip() for p in content.split("\n\n") if p.strip()][0]
     update_kose_yazilari_list(
         title=title,

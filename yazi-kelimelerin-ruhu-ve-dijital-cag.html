@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelimelerin Ruhu ve Dijital Çağın İllüzyonu: Yeni Kurguların Eşiğinde İnsan | Tolga Özdoğan</title>
+    <meta name="description" content="Yazar Tolga Özdoğan'ın Kelimelerin Ruhu ve Dijital Çağın İllüzyonu: Yeni Kurguların Eşiğinde İnsan başlıklı köşe yazısı.">
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#0B0F19',
+                        'brand-card': '#111724',
+                        'brand-gold': '#D4AF37',
+                        'brand-gray': '#A0AAB2',
+                    },
+                    fontFamily: {
+                        'display': ['Cinzel', 'serif'],
+                        'serif': ['Lora', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'signature': ['Alex Brush', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0B0F19; color: #E2E8F0; font-family: 'Lora', serif; line-height: 1.95; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0F19; }
+        ::-webkit-scrollbar-thumb { background: #2A3650; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+        ::selection { background: #D4AF37; color: #0B0F19; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .article-quote { border-left: 3px solid #D4AF37; padding-left: 1.75rem; margin: 3rem 0; font-style: italic; color: #FFFFFF; font-size: 1.25rem; line-height: 1.8; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-brand-dark">
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-brand-dark/95 border-b border-brand-gold/10 py-4 shadow-lg" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="index.html" class="font-signature text-3xl md:text-4xl text-brand-gold hover:text-white transition-colors tracking-wide">Tolga Özdoğan</a>
+            <div class="hidden lg:flex space-x-6 font-sans text-xs tracking-wide items-center">
+                <a href="index.html#eserler" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Eserler</a>
+                <a href="index.html#yazar" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Yazar Hakkında</a>
+                <a href="dusunce-defteri.html" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Düşünce Defteri</a>
+                <a href="roportajlar.html" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Röportajlar</a>
+                <a href="kose-yazilari.html" class="text-brand-gold font-semibold transition-colors uppercase border-b border-brand-gold pb-1">Köşe Yazıları</a>
+                <a href="sosyal-medya.html" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Sosyal Medya</a>
+                <a href="basin.html" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Basında Biz</a>
+            </div>
+            <button class="lg:hidden text-brand-gold focus:outline-none" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden absolute w-full bg-brand-dark border-b border-brand-gold/20 py-4 px-6 flex flex-col space-y-4 shadow-2xl">
+             <a href="index.html#eserler" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Eserler</a>
+             <a href="index.html#yazar" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Yazar Hakkında</a>
+             <a href="dusunce-defteri.html" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Düşünce Defteri</a>
+             <a href="roportajlar.html" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Röportajlar</a>
+             <a href="kose-yazilari.html" class="text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Köşe Yazıları</a>
+             <a href="sosyal-medya.html" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Sosyal Medya</a>
+             <a href="basin.html" class="text-white hover:text-brand-gold font-sans uppercase text-sm">Basında Biz</a>
+        </div>
+    </nav>
+
+    <header class="pt-36 pb-16 bg-gradient-to-b from-brand-dark to-[#0f1423] border-b border-brand-gold/10">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal active">
+            <div class="mb-6 flex items-center justify-center gap-3">
+                <a href="kose-yazilari.html" class="text-brand-gold hover:text-white font-sans text-xs tracking-widest uppercase transition-colors">
+                    <i class="fas fa-arrow-left mr-1"></i> Köşe Yazılarına Dön
+                </a>
+                <span class="text-brand-gray/40">•</span>
+                <span class="text-brand-gold font-sans text-xs tracking-widest uppercase border border-brand-gold/40 px-2 py-0.5 rounded-sm">
+                    Edebiyat & Felsefe
+                </span>
+            </div>
+            <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                Kelimelerin Ruhu ve Dijital Çağın İllüzyonu: Yeni Kurguların Eşiğinde İnsan
+            </h1>
+            <div class="w-20 h-px bg-brand-gold mx-auto mb-6"></div>
+            <div class="flex flex-wrap items-center justify-center gap-4 text-brand-gray text-xs font-sans">
+                <span><i class="fas fa-user-pen text-brand-gold mr-1"></i> Tolga Özdoğan</span>
+                <span>•</span>
+                <span><i class="far fa-calendar-alt text-brand-gold mr-1"></i> 24 Ağustos 2026</span>
+                <span>•</span>
+                <span><i class="far fa-clock text-brand-gold mr-1"></i> 7 dk</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-16 bg-[#0B0F19]">
+        <div class="max-w-3xl mx-auto px-6">
+            <article class="font-serif text-slate-200 text-lg leading-relaxed space-y-7 reveal active">
+                <p class="text-xl md:text-2xl text-white font-serif leading-relaxed italic border-b border-brand-gray/10 pb-6">Bugün edebiyat dünyasında en hararetli tartışmalardan biri, 2026 Commonwealth Ödülleri ve çağdaş edebiyat dergileri etrafında yeniden alevlenen 'yapay zeka kurguları ve edebiyatın fast-foodlaşması' meselesi. Son dönemde raflara çıkan yeni romanları ve dünyada ses getiren kurguları incelerken zihnimi kurcalayan temel soru şu oldu: İnsan, kelimeleri hızla tüketen birer veri dizisine mi dönüştürüyor, yoksa edebiyatın o yavaş, sancılı ve büyüleyici ruhuna her zamankinden daha mı muhtaç?</p>
+
+<p>Riley Sager'ın yeni romanı The Unknown'dan Frode Grytten'in derinlikli insan tahlillerine kadar son günlerde öne çıkan eserler, aslında bize hep aynı gerçeği fısıldıyor: İyi bir edebiyat eseri, kusursuz kurgulanmış bir matematik denklemi değildir. Edebiyat, yazarın kendi içindeki çatışmaları, yanıtlayamadığı soruları ve zihnindeki entropiyi sayfaya dökme cesaretidir. Bir yapay zeka algoritması bize binlerce yıllık edebi kurallara harfiyen uyan, grameri kusursuz metinler üretebilir. Ancak hiçbir kod satırı, bir insanın gece yarısı tek bir kelimeyi ararken hissettiği o varoluşsal sancıyı kopyalayamaz.</p>
+
+<p>Kaosun Mimarı İnsan ve Düzenin Savunucusu İnsan kitaplarımda vurguladığım o kadim döngü, bugün dijitalleşen kurgu dünyasında tam karşımızda duruyor. İnsanoğlu, belirsizlikten korktuğu için kurguyu da algoritmalarla 'düzenli', öngörülebilir ve hızlı tüketilebilir bir kalıba sokmaya çalışıyor. Fakat tam da bu düzen arayışı, edebiyatın kalbindeki o vahşi, tahmin edilemez yaratıcı kaosu yok etme tehlikesi taşıyor. Oysa bizi bir kitaba bağlayan şey kusursuz formüller değil; kahramanın düştüğü hatalar, yazarın satır arasına gizlediği kırılganlıklar ve metnin bize hissettirdiği o derin yalnızlık duygusudur.</p>
+
+<div class="article-quote">
+    "Yapay zeka bize milyarlarca kelimeyi dizayn edebilir; ancak hiçbir algoritma, bir yazarın kendi içsel kaosundan damıttığı o sahici acıyı, tereddüdü ve umudu var edemez."
+</div>
+
+<p>Günümüzün hızlı tüketim kültüründe, raftan bir kitabı alıp telefon ekranlarından uzakta, sayfa kokusu ve sessizlikle baş başa kalmak en büyük zihinsel direniştir. Yeni çıkan kitapların bize sunduğu en değerli armağan, bizi bu hızlı ve gürültülü dünyanın dışına çıkararak kendi iç dünyamızla yüzleştirmesidir.</p>
+
+<p>Kelimeler sadece bilgi taşıyan semboller değildir; her biri insan bilincinin ve hafızasının canlı birer uzantısıdır. Teknolojinin hızı ne kadar artarsa artsın, edebiyatın zamana meydan okuyan derinliği ve insanın hakikat arayışı daima galip gelecektir.</p>
+            </article>
+
+            <div class="mt-12 pt-8 border-t border-brand-gray/10 flex flex-col md:flex-row justify-between items-center gap-6 reveal">
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-xs font-sans bg-brand-card border border-brand-gray/20 text-brand-gray px-3 py-1 rounded-sm">#Edebiyat</span>
+<span class="text-xs font-sans bg-brand-card border border-brand-gray/20 text-brand-gray px-3 py-1 rounded-sm">#Felsefe</span>
+<span class="text-xs font-sans bg-brand-card border border-brand-gray/20 text-brand-gray px-3 py-1 rounded-sm">#YapayZeka</span>
+<span class="text-xs font-sans bg-brand-card border border-brand-gray/20 text-brand-gray px-3 py-1 rounded-sm">#Kurgu</span>
+<span class="text-xs font-sans bg-brand-card border border-brand-gray/20 text-brand-gray px-3 py-1 rounded-sm">#KaosunMimarıİnsan</span>
+<span class="text-xs font-sans bg-brand-card border border-brand-gray/20 text-brand-gray px-3 py-1 rounded-sm">#DüzeninSavunucusuİnsan</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-xs font-sans text-brand-gray uppercase tracking-wider">Paylaş:</span>
+                    <a href="https://twitter.com/intent/tweet?text=Kelimelerin Ruhu ve Dijital Çağın İllüzyonu: Yeni Kurguların Eşiğinde İnsan&url=https://tolgaozdogan.com/yazi-kelimelerin-ruhu-ve-dijital-cag.html" target="_blank" class="w-8 h-8 rounded-full border border-brand-gray/30 flex items-center justify-center text-brand-gray hover:text-brand-dark hover:bg-brand-gold hover:border-brand-gold transition-all duration-300">
+                        <i class="fab fa-x-twitter text-xs"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://tolgaozdogan.com/yazi-kelimelerin-ruhu-ve-dijital-cag.html" target="_blank" class="w-8 h-8 rounded-full border border-brand-gray/30 flex items-center justify-center text-brand-gray hover:text-brand-dark hover:bg-brand-gold hover:border-brand-gold transition-all duration-300">
+                        <i class="fab fa-linkedin-in text-xs"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?text=https://tolgaozdogan.com/yazi-kelimelerin-ruhu-ve-dijital-cag.html" target="_blank" class="w-8 h-8 rounded-full border border-brand-gray/30 flex items-center justify-center text-brand-gray hover:text-brand-dark hover:bg-brand-gold hover:border-brand-gold transition-all duration-300">
+                        <i class="fab fa-whatsapp text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-brand-card border border-brand-gray/10 p-8 rounded-lg flex flex-col md:flex-row items-center gap-6 shadow-xl reveal">
+                <div class="w-24 h-24 flex-shrink-0 relative">
+                    <div class="absolute inset-0 rounded-full border-2 border-brand-gold/30 transform -translate-x-1 -translate-y-1"></div>
+                    <img src="./Tolga 2.png" alt="Yazar Tolga Özdoğan" class="w-full h-full object-cover rounded-full border-2 border-brand-card relative z-10 shadow-md">
+                </div>
+                <div class="text-center md:text-left space-y-2">
+                    <h3 class="font-display text-xl font-bold text-white">Tolga Özdoğan</h3>
+                    <p class="font-sans text-brand-gold text-xs tracking-widest uppercase">Yazar & Tasarımcı</p>
+                    <p class="font-serif text-brand-gray text-sm italic leading-relaxed">
+                        "Kelimelerle dünyayı yeniden kurmak, insanı en çok da kendi labirentlerinde özgürleştiren tek yoldur."
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center reveal">
+                <a href="kose-yazilari.html" class="inline-flex items-center bg-brand-gold/10 border border-brand-gold/50 text-brand-gold px-8 py-3 rounded-sm font-sans text-xs tracking-widest uppercase hover:bg-brand-gold hover:text-brand-dark transition-all duration-300">
+                    ← Tüm Köşe Yazılarını İncele
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black py-10 border-t border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <p class="font-sans text-xs text-brand-gray/60 mb-4 md:mb-0">
+                &copy; <span id="year"></span> Tolga Özdoğan. Tüm hakları saklıdır.
+            </p>
+            <div class="font-sans text-xs text-brand-gray/60">
+                Yazar Resmi Web Sitesidir.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

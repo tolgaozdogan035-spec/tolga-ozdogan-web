@@ -25,26 +25,18 @@ jobs:
         with:
           python-version: '3.11'
 
-      # 3. Google Drive İndirme Aracı (gdown) Kurulumu
-      - name: Gerekli Paketleri Yükle
+      # 3. Gerekli Paketleri Yükle
+      - name: Bağımlılıkları Yükle
         run: |
           python -m pip install --upgrade pip
           pip install gdown
 
-      # 4. Google Drive'daki TolgaOzdoganWeb Klasöründen yeni_yazi.json Dosyasını İndir
+      # 4. Google Drive'dan yeni_yazi.json Dosyasını İndir (Python ile Hatasız İndirme)
       - name: Google Drive'dan yeni_yazi.json İndir
         run: |
           echo "Google Drive'dan dosya çekiliyor..."
-          # TolgaOzdoganWeb klasöründeki güncel dosya ID'si üzerinden indirme
-          gdown --id 1_5Erfmbuwdoiju-WnQiEdV29MYqv89bH -O yeni_yazi.json --fuzzy
-          
-          if [ -f "yeni_yazi.json" ]; then
-            echo "yeni_yazi.json başarıyla indirildi. Dosya boyutu:"
-            ls -lh yeni_yazi.json
-          else
-            echo "Hata: Google Drive'dan dosya indirilemedi!"
-            exit 1
-          fi
+          python -c "import gdown; gdown.download(id='1_5Erfmbuwdoiju-WnQiEdV29MYqv89bH', output='yeni_yazi.json', quiet=False)"
+          ls -lh yeni_yazi.json
 
       # 5. HTML Sayfalarını Üret ve Listeyi Güncelle
       - name: HTML Sayfalarını Üret ve Listeyi Güncelle

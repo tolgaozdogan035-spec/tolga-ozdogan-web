@@ -1,19 +1,69 @@
-- name: Köşe Yazısı HTML Sayfalarını Oluştur
+name: Otomatik Kose Yazisi Yayini
+
+on:
+  # Manuel tetikleme (GitHub Actions panelinden "Run workflow" butonu ile)
+  workflow_dispatch:
+  
+  # İsteğe bağlı: Her Pazar, Pazartesi, Çarşamba, Cuma saat 13:00'te otomatik tetikleme
+  schedule:
+    - cron: '0 10 * * 0,1,3,5' # UTC 10:00 (Türkiye saatiyle 13:00)
+
+# Depoya yeni HTML sayfalarını ve güncellenen listeyi push edebilmek için yazma izni
+permissions:
+  contents: write
+
+jobs:
+  publish-article:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Depodaki kaynak kodları çek
+      - name: Depoyu Klonla (Checkout)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. Python ortamını kur
+      - name: Python Kurulumu
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 3. Gerekli kütüphaneleri yükle (Google Drive indirmesi için gdown vb.)
+      - name: Bağımlılıkları Yükle
+        run: |
+          python -m pip install --upgrade pip
+          pip install gdown requests
+
+      # 4. Google Drive'dan yeni_yazi.json dosyasını çek (Klasör/Dosya ID'niz ile)
+      # Not: Eğer dosyayı depoya doğrudan aktaran ayrı bir adımınız varsa bu adım mevcut yeni_yazi.json dosyasını kontrol eder.
+      - name: yeni_yazi.json Dosyasını Kontrol Et
+        run: |
+          if [ -f "yeni_yazi.json" ]; then
+            echo "yeni_yazi.json bulundu, işleme devam ediliyor."
+          else
+            echo "yeni_yazi.json doğrudan kök dizinde aranıyor..."
+          fi
+
+      # 5. Python betiğini çalıştırarak yazi-[slug].html oluştur ve kose-yazilari.html sayfasını güncelle
+      - name: Köşe Yazısı HTML Sayfalarını Üret
         run: |
           python generate.py --json_file yeni_yazi.json
 
-      - name: Değişiklikleri Git'e Ekle ve Yayınla
+      # 6. Değişiklikleri Git'e ekle, güvenli şekilde commit et ve main dalına push yap
+      - name: Değişiklikleri Kaydet ve Yayınla (Git Commit & Push)
         run: |
           git config --global user.name "Tolga Özdoğan (Otomasyon)"
           git config --global user.email "tolgaozdogan035@gmail.com"
-          
-          # Tüm yeni ve güncellenen dosyaları (JSON, HTML) stage'e ekle
+
+          # Tüm yeni oluşturulan (yazi-*.html) ve güncellenen dosyaları ekle
           git add -A
-          
-          # Eğer commit edilecek değişiklik varsa commit yap ve push et, yoksa hata verme
+
+          # Yalnızca değişiklik varsa commit yap (hata kodunu önleyen güvenli kontrol)
           if git diff --staged --quiet; then
-            echo "Yayınlanacak yeni bir değişiklik bulunamadı."
+            echo "Yayınlanacak yeni bir değişiklik veya yeni yazı bulunamadı. İşlem tamamlandı."
           else
             git commit -m "Otomatik Yayın: Yeni köşe yazısı eklendi ($(date +'%d.%m.%Y %H:%M'))"
-            git push
+            git push origin main
+            echo "Yeni yazı başarıyla depoya push edildi ve yayına alındı!"
           fi

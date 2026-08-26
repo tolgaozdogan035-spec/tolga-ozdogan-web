@@ -13,16 +13,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Depoyu çek
       - name: Depoyu Klonla (Checkout)
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # 2. Python Ortamını Kur
       - name: Python Kurulumu
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
+      # 3. Google Drive İndirme Aracı (gdown) Kurulumu
+      - name: Gerekli Paketleri Yükle
+        run: |
+          python -m pip install --upgrade pip
+          pip install gdown
+
+      # 4. Google Drive'daki TolgaOzdoganWeb Klasöründen yeni_yazi.json Dosyasını İndir
+      - name: Google Drive'dan yeni_yazi.json İndir
+        run: |
+          echo "Google Drive'dan dosya çekiliyor..."
+          # TolgaOzdoganWeb klasöründeki güncel dosya ID'si üzerinden indirme
+          gdown --id 1_5Erfmbuwdoiju-WnQiEdV29MYqv89bH -O yeni_yazi.json --fuzzy
+          
+          if [ -f "yeni_yazi.json" ]; then
+            echo "yeni_yazi.json başarıyla indirildi. Dosya boyutu:"
+            ls -lh yeni_yazi.json
+          else
+            echo "Hata: Google Drive'dan dosya indirilemedi!"
+            exit 1
+          fi
+
+      # 5. HTML Sayfalarını Üret ve Listeyi Güncelle
       - name: HTML Sayfalarını Üret ve Listeyi Güncelle
         run: |
           python - << 'EOF'
@@ -330,6 +354,7 @@ jobs:
           )
           EOF
 
+      # 6. Değişiklikleri Git'e Ekle ve Yayınla
       - name: Değişiklikleri Kaydet ve Yayınla (Git Commit & Push)
         run: |
           git config --global user.name "Tolga Özdoğan (Otomasyon)"
@@ -342,5 +367,5 @@ jobs:
           else
             git commit -m "Otomatik Yayın: Yeni köşe yazısı eklendi ($(date +'%d.%m.%Y %H:%M'))"
             git push origin main
-            echo "Yeni yazı başarıyla yayınlandı!"
+            echo "Yeni yazı başarıyla deponuza push edildi ve yayına alındı!"
           fi

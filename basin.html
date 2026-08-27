@@ -2,132 +2,487 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2DRWFNH55J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2DRWFNH55J');
-</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basında Biz | Tolga Özdoğan</title>
+    <meta name="description" content="Yazar Tolga Özdoğan ve eserleri hakkında basında yer alan haberler, incelemeler ve röportajlar.">
+    
+    <link rel="icon" type="image/png" href="./favicon.png">
+    
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2DRWFNH55J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2DRWFNH55J');
+    </script>
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { 'brand-dark': '#0B0F19', 'brand-gold': '#D4AF37', 'brand-gray': '#A0AAB2' },
-                    fontFamily: { 'display': ['Cinzel', 'serif'], 'serif': ['Lora', 'serif'], 'sans': ['Montserrat', 'sans-serif'], 'signature': ['Alex Brush', 'cursive'] }
+                    colors: {
+                        'brand-dark': '#0B0F19',
+                        'brand-gold': '#D4AF37',
+                        'brand-gray': '#A0AAB2',
+                    },
+                    fontFamily: {
+                        'display': ['Cinzel', 'serif'],
+                        'serif': ['Lora', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'signature': ['Alex Brush', 'cursive'],
+                    }
                 }
             }
         }
     </script>
     <style>
         body { background-color: #0B0F19; color: #E2E8F0; font-family: 'Lora', serif; }
-        .press-card { transition: all 0.4s ease; }
-        .press-card:hover { transform: translateY(-5px); border-color: rgba(212, 175, 55, 0.5); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0F19; }
+        ::-webkit-scrollbar-thumb { background: #2A3650; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+        ::selection { background: #D4AF37; color: #0B0F19; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .news-card:hover img { transform: scale(1.05); }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-gold selection:text-brand-dark">
 
-    <header class="text-center py-12 px-6 bg-gradient-to-b from-[#162244] to-brand-dark border-b border-brand-gold/20">
-        <a href="index.html" class="font-signature text-5xl md:text-6xl text-brand-gold hover:text-white transition-colors tracking-wide block mb-2">Tolga Özdoğan</a>
-        <div class="font-display text-xs md:text-sm tracking-[0.3em] uppercase text-brand-gray mb-6">Basında Öne Çıkanlar & Haberler</div>
-        <div class="flex justify-center gap-4">
-            <a href="index.html" class="inline-block border border-brand-gold text-brand-gold px-6 py-2 rounded-sm font-sans text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-brand-dark transition-all duration-300">
-                &#8592; Ana Sayfaya Dön
-            </a>
-            <a href="sosyal-medya.html" class="inline-block border border-brand-gold text-brand-gold px-6 py-2 rounded-sm font-sans text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-brand-dark transition-all duration-300">
-                Sosyal Medya &#8594;
-            </a>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-brand-dark/95 border-b border-brand-gold/10 py-4 shadow-lg" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="index.html" class="font-signature text-3xl md:text-4xl text-brand-gold hover:text-white transition-colors tracking-wide">Tolga Özdoğan</a>
+            
+            <div class="hidden lg:flex space-x-6 font-sans text-xs tracking-wide items-center">
+                <a href="index.html#eserler" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Eserler</a>
+                <a href="index.html#yazar" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Yazar Hakkında</a>
+                <a href="dusunce-defteri.html" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Düşünce Defteri</a>
+                <a href="roportajlar.html" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Röportajlar</a>
+                <a href="kose-yazilari.html" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Köşe Yazıları</a>
+                <a href="sosyal-medya.html" class="text-brand-gray hover:text-brand-gold transition-colors uppercase">Sosyal Medya</a>
+                <a href="basin.html" class="text-brand-gold font-semibold transition-colors uppercase border-b border-brand-gold pb-1">Basında Biz</a>
+            </div>
+
+            <button class="lg:hidden text-brand-gold focus:outline-none" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden lg:hidden absolute w-full bg-brand-dark border-b border-brand-gold/20 py-4 px-6 flex flex-col space-y-4 shadow-2xl">
+             <a href="index.html#eserler" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Eserler</a>
+             <a href="index.html#yazar" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Yazar Hakkında</a>
+             <a href="dusunce-defteri.html" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Düşünce Defteri</a>
+             <a href="roportajlar.html" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Röportajlar</a>
+             <a href="kose-yazilari.html" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Köşe Yazıları</a>
+             <a href="sosyal-medya.html" class="text-white hover:text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Sosyal Medya</a>
+             <a href="basin.html" class="text-brand-gold font-sans uppercase text-sm border-b border-brand-gray/20 pb-2">Basında Biz</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="pt-32 pb-16 bg-gradient-to-b from-brand-dark to-[#0f1423] border-b border-brand-gold/10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 text-center reveal active">
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Basın Yansımaları</h1>
+            <div class="w-24 h-px bg-brand-gold mx-auto mb-6"></div>
+            <p class="font-serif text-brand-gray text-lg max-w-2xl mx-auto italic">
+                Eserlerimiz üzerine ulusal ve yerel basında çıkan haberler, röportajlar ve küpürler.
+            </p>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-6 py-20">
-        <div class="text-center mb-16">
-            <h1 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Basın Yansımaları</h1>
-            <div class="w-24 h-px bg-brand-gold mx-auto mb-6"></div>
-            <p class="font-sans text-brand-gray text-sm md:text-base max-w-xl mx-auto">
-                "Kaosun Mimarı İnsan" kitabımız üzerine ulusal ve yerel basında çıkan haberler, röportajlar ve küpürler.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- News Grid Section -->
+    <section class="py-20 bg-[#0B0F19]">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
             
-            <!-- Haber 1: Ege Postası -->
-            <div class="press-card bg-[#111724] border border-brand-gray/10 rounded-sm overflow-hidden flex flex-col justify-between shadow-2xl">
-                <div>
-                    <div class="p-4 border-b border-brand-gray/10 flex justify-between items-center bg-[#0d1320]">
-                        <span class="font-sans text-xs font-bold text-brand-gold tracking-widest uppercase">Ege Postası</span>
-                        <span class="font-sans text-[11px] text-brand-gray/60">21.07.2026</span>
-                    </div>
-                    <div class="aspect-video bg-gray-900 overflow-hidden relative flex items-center justify-center">
-                        <img src="ege-postasi.jpeg" alt="Ege Postası Haberi" class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0b0f19/d4af37?text=Ege+Postasi+Haberi';">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- 1. ESKİ HABER: Ege Postası -->
+                <a href="https://www.egepostasi.com/haber/Tolga-Ozdogandan-yeni-kitap-Kaos-mimari-insan/394354" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/ege-postasi.jpeg" alt="Ege Postası Haberi" class="w-full h-full object-cover transition-transform duration-500">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-display text-lg text-white font-semibold mb-3">Tolga Özdoğan’dan yeni kitap: Kaosun mimarı insan</h3>
-                        <p class="font-serif text-brand-gray text-sm leading-relaxed mb-4">
-                            Uzun yıllar görsel iletişim ve organizasyon dünyasına yön veren tecrübeli isim Tolga Özdoğan, felsefe ve insan doğasını harmanladığı yeni eseri ile okurlarının karşısında...
-                        </p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Ege Postası</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">21.07.2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Tolga Özdoğan’dan yeni kitap: Kaosun mimarı insan</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Uzun yıllar görsel iletişim ve organizasyon dünyasına yön veren tecrübeli isim Tolga Özdoğan, felsefe ve insan doğasını harmanladığı yeni eseri ile okurlarının karşısında...</p>
                     </div>
-                </div>
-                <div class="p-4 bg-[#0d1320] border-t border-brand-gray/10 text-right">
-                    <a href="https://www.egepostasi.com/haber/Tolga-Ozdogandan-yeni-kitap-Kaos-mimari-insan/394354" target="_blank" class="font-sans text-xs text-brand-gold hover:underline uppercase tracking-wider">Haberin Devamı <i class="fas fa-external-link-alt ml-1"></i></a>
-                </div>
-            </div>
+                </a>
 
-            <!-- Haber 2: Son Kale İzmir -->
-            <div class="press-card bg-[#111724] border border-brand-gray/10 rounded-sm overflow-hidden flex flex-col justify-between shadow-2xl">
-                <div>
-                    <div class="p-4 border-b border-brand-gray/10 flex justify-between items-center bg-[#0d1320]">
-                        <span class="font-sans text-xs font-bold text-brand-gold tracking-widest uppercase">Son Kale İzmir</span>
-                        <span class="font-sans text-[11px] text-brand-gray/60">21.07.2026</span>
-                    </div>
-                    <div class="aspect-video bg-gray-900 overflow-hidden relative flex items-center justify-center">
-                        <img src="son-kale-izmir.jpeg" alt="Son Kale İzmir Haberi" class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0b0f19/d4af37?text=Son+Kale+Izmir+Haberi';">
+                <!-- 2. ESKİ HABER: Son Kale İzmir -->
+                <a href="https://www.sonkaleizmir.com/haber/Tolga-Ozdogan-in-yeni-kitabi-Kaosun-mimari-insan-raflarda/193703" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/son-kale-izmir.jpeg" alt="Son Kale İzmir Haberi" class="w-full h-full object-cover transition-transform duration-500">
                     </div>
                     <div class="p-6">
-                        <h3 class="font-display text-lg text-white font-semibold mb-4">Tolga Özdoğan'ın yeni kitabı 'Kaosun mimari insan' raflarda</h3>
-                        <p class="font-serif text-brand-gray text-sm leading-relaxed mb-4">
-                            İnsanın varoluşsal karmaşasını ve ahlaki değerlerini mimari bir perspektifle ele alan kitap, Limera Yayınları etiketiyle raflardaki yerini aldı.
-                        </p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Son Kale İzmir</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">21.07.2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Tolga Özdoğan'ın yeni kitabı 'Kaosun mimari insan' raflarda</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">İnsanın varoluşsal karmaşasını ve ahlaki değerlerini mimari bir perspektifle ele alan kitap, Limera Yayınları etiketiyle raflardaki yerini aldı.</p>
                     </div>
-                </div>
-                <div class="p-4 bg-[#0d1320] border-t border-brand-gray/10 text-right">
-                    <a href="https://www.sonkaleizmir.com/haber/Tolga-Ozdogan-in-yeni-kitabi-Kaosun-mimari-insan-raflarda/193703" target="_blank" class="font-sans text-xs text-brand-gold hover:underline uppercase tracking-wider">Haberin Devamı <i class="fas fa-external-link-alt ml-1"></i></a>
-                </div>
-            </div>
+                </a>
 
-            <!-- Haber 3: İlkses Gazetesi (Küpür) -->
-            <div class="press-card bg-[#111724] border border-brand-gray/10 rounded-sm overflow-hidden flex flex-col justify-between shadow-2xl">
-                <div>
-                    <div class="p-4 border-b border-brand-gray/10 flex justify-between items-center bg-[#0d1320]">
-                        <span class="font-sans text-xs font-bold text-brand-gold tracking-widest uppercase">İlkses Gazetesi</span>
-                        <span class="font-sans text-[11px] text-brand-gray/60">Basın Küpürü</span>
+                <!-- 3. ESKİ HABER: İlkses Gazetesi (Küpür) -->
+                <div class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-black relative border-b border-brand-gray/10 p-2 flex items-center justify-center">
+                        <img src="./basingorsel/ilkses-gazetesi.jpeg" alt="İlkses Gazetesi Basın Küpürü" class="w-full h-full object-contain transition-transform duration-500">
                     </div>
-                    <!-- Küpür görseli card yüksekliğini tam dolduracak şekilde object-contain ile konumlandırıldı -->
-                    <div class="h-[340px] bg-black overflow-hidden relative flex items-center justify-center p-2">
-                        <img src="ilkses-gazetesi.jpeg" alt="İlkses Gazetesi Basın Küpürü" class="w-full h-full object-contain opacity-95 hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0b0f19/d4af37?text=Ilkses+Gazetesi+Kupuru';">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">İlkses Gazetesi</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Basın Küpürü</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Yazılı Basın Arşivi</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Eserlerimizin ve edebi çalışmalarımızın yazılı basındaki yansımaları ve haber küpürleri.</p>
                     </div>
                 </div>
-                <div class="p-4 bg-[#0d1320] border-t border-brand-gray/10 text-center">
-                    <span class="font-sans text-xs text-brand-gray/70 uppercase tracking-widest">Yazılı Basın Arşivi</span>
-                </div>
-            </div>
+                
+                <!-- 4. Haber: 35 Haber -->
+                <a href="https://35haber.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/35haber.com.tr.png" alt="35 Haber Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">35 Haber</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Leyla Yasak Mevsim Okurlarla Buluştu: Bir Direniş Destanı</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Yeni roman Leyla Yasak Mevsim'in çıkışı İzmir medyasında geniş yankı buldu.</p>
+                    </div>
+                </a>
 
+                <!-- 5. Haber: 42 Haber -->
+                <a href="https://42haber.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/42haber.com.tr.png" alt="42 Haber Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">42 Haber</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Leyla Yasak Mevsim Okurlarla Buluştu</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Toplumsal hafıza ve direniş temalı yeni roman edebiyat dünyasında yerini aldı.</p>
+                    </div>
+                </a>
+
+                <!-- 6. Haber: 46 Haber -->
+                <a href="https://46haber.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/46haber.com.tr.png" alt="46 Haber Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">46 Haber</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Edebiyat Dünyasında Yeni Bir Soluk: Leyla Yasak Mevsim</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Aşk ve toplumsal hafızanın iç içe geçtiği yeni romanın detayları basında paylaşıldı.</p>
+                    </div>
+                </a>
+
+                <!-- 7. Haber: Adana Medya -->
+                <a href="https://adanamedya.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/adanamedya.com.tr.png" alt="Adana Medya Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Adana Medya</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Leyla Yasak Mevsim Okurlarla Buluştu</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Tolga Özdoğan'ın yeni romanı Türkiye genelindeki medya organlarında yer almaya devam ediyor.</p>
+                    </div>
+                </a>
+
+                <!-- 8. Haber: Afyon Haberleri -->
+                <a href="https://afyonhaberleri.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/afyonhaberleri.com.tr.png" alt="Afyon Haberleri Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Afyon Haberleri</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Bir Direniş ve Aşk Destanı: Leyla</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Romanın tarihi arka planı ve karakterlerin derinliği basının ilgisini çekti.</p>
+                    </div>
+                </a>
+
+                <!-- 9. Haber: Ajans Kocaeli -->
+                <a href="https://ajanskocaeli.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/ajanskocaeli.com.tr.png" alt="Ajans Kocaeli Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Ajans Kocaeli</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Leyla Yasak Mevsim Okurlarla Buluştu</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Yeni roman, edebi kurgusu ve toplumsal mesajlarıyla haber bültenlerinde.</p>
+                    </div>
+                </a>
+
+                <!-- 10. Haber: Ankara Detay -->
+                <a href="https://ankaradetay.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/ankaradetay.com.tr.png" alt="Ankara Detay Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Ankara Detay</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Başkent'ten İzmir'e Uzanan Bir Hikaye</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Romanın Ankara'da başlayan ve İzmir'de son bulan etkileyici kurgusu basında.</p>
+                    </div>
+                </a>
+
+                <!-- 11. Haber: Antalya Gerçek -->
+                <a href="https://antalyagercek.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/antalyagercek.com.tr.png" alt="Antalya Gerçek Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Antalya Gerçek</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Leyla Yasak Mevsim Okurlarla Buluştu</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Tolga Özdoğan'ın kaleminden çıkan yeni eser edebiyat dünyasında ses getirdi.</p>
+                    </div>
+                </a>
+
+                <!-- 12. Haber: Antep Flash -->
+                <a href="https://antepflash.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/antepflash.com.tr.png" alt="Antep Flash Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Antep Flash</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Bir Direniş, Aşk ve Toplumsal Hafıza Destanı</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Romanın çıkışı yerel ve ulusal basında geniş bir yelpazede okuyucuya duyuruldu.</p>
+                    </div>
+                </a>
+
+                <!-- 13. Haber: Başkent Olay -->
+                <a href="https://baskentolay.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/baskentolay.com.tr.png" alt="Başkent Olay Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Başkent Olay</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Leyla Yasak Mevsim Okurlarla Buluştu</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Edebiyat haberlerinde yazarın yeni kitabı Leyla Yasak Mevsim konuşuluyor.</p>
+                    </div>
+                </a>
+
+                <!-- 14. Haber: Basvur.co -->
+                <a href="https://www.basvur.co/haber/1114420716/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/basvur.co.png" alt="Basvur.co Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Basvur.co</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Leyla Yasak Mevsim Okurlarla Buluştu</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Yeni kitabın lansmanı ve dikkat çeken teması dijital platformlarda yer aldı.</p>
+                    </div>
+                </a>
+
+                <!-- 15. Haber: Bursa Taraf -->
+                <a href="https://bursataraf.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/bursataraf.com.tr.png" alt="Bursa Taraf Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Bursa Taraf</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Bir Direniş, Aşk ve Toplumsal Hafıza Destanı</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Tolga Özdoğan'ın yeni eseri Leyla Yasak Mevsim medya gündemine oturdu.</p>
+                    </div>
+                </a>
+
+                <!-- 16. Haber: Eses Gündem -->
+                <a href="https://esesgundem.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/esesgundem.com.tr.png" alt="Eses Gündem Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Eses Gündem</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Leyla Yasak Mevsim Okurlarla Buluştu</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Toplumsal hafızayı tazeleyen yeni roman edebiyat dünyasına hızlı bir giriş yaptı.</p>
+                    </div>
+                </a>
+
+                <!-- 17. Haber: Flash İzmir -->
+                <a href="https://flashizmir.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/flashizmir.com.tr.png" alt="Flash İzmir Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Flash İzmir</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Leyla Yasak Mevsim İzmir Gündeminde</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Romanın İzmir'de geçen dokusu ve okurlarla buluşması yerel basında geniş yer buldu.</p>
+                    </div>
+                </a>
+
+                <!-- 18. Haber: Gündem Zamanı -->
+                <a href="https://gundemzamani.com/2026/08/27/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/gundemzamani.com.png" alt="Gündem Zamanı Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Gündem Zamanı</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Bir Direniş ve Aşk Destanı: Leyla</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Kurgusu ve karakterleriyle dikkat çeken roman edebiyat gündeminin ilk sıralarında.</p>
+                    </div>
+                </a>
+
+                <!-- 19. Haber: Halk Gazetesi -->
+                <a href="https://halkgazetesi.com/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani-292827h.htm" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/halkgazetesi.com.png" alt="Halk Gazetesi Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Halk Gazetesi</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Leyla Yasak Mevsim Okurlarla Buluştu</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Halk Gazetesi sayfalarında Tolga Özdoğan'ın yeni kitabına geniş yer ayrıldı.</p>
+                    </div>
+                </a>
+
+                <!-- 20. Haber: Hatay Nabız -->
+                <a href="https://hataynabiz.com.tr/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/hataynabiz.com.tr.png" alt="Hatay Nabız Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Hatay Nabız</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Leyla Yasak Mevsim Okurlarla Buluştu</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Tolga Özdoğan'ın yeni eseri okuyucular tarafından büyük beğeni topladı.</p>
+                    </div>
+                </a>
+
+                <!-- 21. Haber: Muhtemel -->
+                <a href="https://muhtemel.net/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/muhtemel.net.png" alt="Muhtemel Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Muhtemel</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Leyla Yasak Mevsim Okurlarla Buluştu</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Romanın toplumsal hafıza destanı medyadaki yankısını sürdürüyor.</p>
+                    </div>
+                </a>
+
+                <!-- 22. Haber: Tekdüze -->
+                <a href="https://tekduze.com/2026/08/27/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/tekduze.com.png" alt="Tekdüze Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Tekdüze</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Bir Direniş, Aşk ve Toplumsal Hafıza Destanı</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Edebiyat dünyasına etkileyici bir giriş yapan roman detaylarıyla basında.</p>
+                    </div>
+                </a>
+
+                <!-- 23. Haber: Teknolojik Haberi -->
+                <a href="https://teknolojikhaberi.com/leyla-yasak-mevsim-okurlarla-bulustu-bir-direnis-ask-ve-toplumsal-hafiza-destani/" target="_blank" class="news-card reveal block bg-[#111724] border border-brand-gray/10 rounded-lg overflow-hidden hover:border-brand-gold/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
+                    <div class="h-48 overflow-hidden bg-[#080b12] relative border-b border-brand-gray/10">
+                        <img src="./basingorsel/teknolojikhaberi.com.png" alt="Teknolojik Haberi Küpürü" class="w-full h-full object-cover object-top transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Teknolojik Haberi</span>
+                            <span class="text-brand-gray/60 font-sans text-xs">Ağustos 2026</span>
+                        </div>
+                        <h3 class="font-display text-lg text-white font-semibold leading-snug mb-3">Leyla Yasak Mevsim Okurlarla Buluştu</h3>
+                        <p class="font-serif text-brand-gray text-sm line-clamp-3">Dijital ve teknoloji haber platformları da yazarın yeni kitabının lansmanını duyurdu.</p>
+                    </div>
+                </a>
+
+            </div>
         </div>
-    </main>
+    </section>
 
-    <footer class="bg-black py-10 border-t border-brand-gold/20 text-center font-sans text-xs text-brand-gray/60">
-        &copy; <span id="year"></span> Tolga Özdoğan. Tüm hakları saklıdır.
+    <!-- Footer -->
+    <footer class="bg-black py-10 border-t border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <p class="font-sans text-xs text-brand-gray/60 mb-4 md:mb-0">
+                &copy; <span id="year"></span> Tolga Özdoğan. Tüm hakları saklıdır.
+            </p>
+            <div class="font-sans text-xs text-brand-gray/60">
+                Yazar Resmi Web Sitesidir.
+            </div>
+        </div>
     </footer>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>

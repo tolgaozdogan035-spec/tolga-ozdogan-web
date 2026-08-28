@@ -31,11 +31,35 @@ jobs:
           python -m pip install --upgrade pip
           pip install gdown
 
-      # 4. Google Drive'dan yeni_yazi.json Dosyasını İndir (Python ile Hatasız İndirme)
-      - name: Google Drive'dan yeni_yazi.json İndir
+      # 4. TolgaOzdoganWeb Klasöründen En Güncel yeni_yazi.json Dosyasını Otomatik Çek
+      - name: Google Drive Klasöründen yeni_yazi.json İndir
         run: |
-          echo "Google Drive'dan dosya çekiliyor..."
-          python -c "import gdown; gdown.download(id='1_5Erfmbuwdoiju-WnQiEdV29MYqv89bH', output='yeni_yazi.json', quiet=False)"
+          python - << 'EOF'
+          import os
+          import shutil
+          import gdown
+
+          folder_id = "1voIqvnSh48gOQQjtAFePkfmMbRZ4d3Lk"
+          print("TolgaOzdoganWeb klasöründen dosyalar indiriliyor...")
+          
+          # Klasördeki tüm içeriği geçici klasöre çek
+          gdown.download_folder(id=folder_id, output="gdrive_temp", quiet=False, use_cookies=False)
+          
+          # İndirilenler arasında yeni_yazi.json dosyasını bul ve ana dizine kopyala
+          found = False
+          for root, dirs, files in os.walk("gdrive_temp"):
+              for f in files:
+                  if f == "yeni_yazi.json":
+                      src = os.path.join(root, f)
+                      shutil.copy(src, "yeni_yazi.json")
+                      found = True
+                      print(f"Başarıyla bulundu ve güncellendi: {src} -> ./yeni_yazi.json")
+                      break
+          
+          if not found or not os.path.exists("yeni_yazi.json"):
+              print("Hata: Klasör içerisinde yeni_yazi.json bulunamadı!")
+              exit(1)
+          EOF
           ls -lh yeni_yazi.json
 
       # 5. HTML Sayfalarını Üret ve Listeyi Güncelle
